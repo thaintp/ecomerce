@@ -1,0 +1,95 @@
+$greyish-two: #b7b7b7;
+$greyish-brown: #4d4d4d;
+$orange-1: #ffa15f;
+$orange-2: #ff7e24;
+
+
+.container {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+
+  .searchContainer, .logoContainer, .utilsContainer {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+  }
+}
+
+.inputSearch {
+  height: 35px;
+  width: 181px;
+  padding: 5px 37px 5px 15px;
+  border-radius: 17px;
+  border: solid 1px $greyish-two;
+  outline: none;
+}
+
+.iconSearch {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin: 1px 0 0 145px;
+  padding: 2px;
+  object-fit: contain;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.logoContainer {
+  justify-content: center;
+
+  .logoImage {
+    height: 20px;
+    padding: 0.3px 0.2px 0.4px 0.5px;
+  }
+}
+
+.utilsContainer {
+  justify-content: flex-end;
+
+  .cartImage {
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+  }
+
+  .textInBtn {
+    font-size: 14px;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    height: 22px;
+  }
+
+  .registerBtn {
+    @extend .textInBtn;
+    width: 59px;
+    font-weight: normal;
+    font-style: normal;
+    color: $greyish-brown;
+    background: none;
+    border: none;
+  }
+
+  .loginText {
+    @extend .textInBtn;
+    width: 46px;
+    font-weight: bold;
+    font-style: bold;
+    text-align: center;
+    color: $orange-2;
+  }
+  
+  .loginBtn {
+    width: 120px;
+    height: 35px;
+    border-radius: 100px;
+    border: solid 1px $orange-1;
+    margin: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,16 +1,18 @@
-import styles from './index.module.css'
+import styles from './index.module.scss'
 
 const TopBar = () => {
   return (
     <div className={styles.container}>
       <form className={styles.searchContainer}>
         <input type="search" placeholder="Search.." name="search" className={styles.inputSearch} />
-        <img src="images/search.svg" class={styles.iconSearch}></img>
+        <img src="images/search.svg" className={styles.iconSearch} alt="search"></img>
       </form>
-      <div className={styles.logo}>
+
+      <div className={styles.logoContainer}>
         <img src="images/logo.svg" className={styles.logoImage} alt="logo" />
       </div>
-      <div className={styles.utils}>
+
+      <div className={styles.utilsContainer}>
         <button className={styles.registerBtn}>Register</button>
         <button className={styles.loginBtn}>
           <span className={styles.loginText}>Log In</span>

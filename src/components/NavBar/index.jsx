@@ -1,4 +1,4 @@
-import styles from './index.module.css';
+import styles from './index.module.scss';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 const NavBar = () => {

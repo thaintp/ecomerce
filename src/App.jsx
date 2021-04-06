@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import { TopBar, NavBar } from 'components';
 import { Home, Products } from 'pages';
-import styles from 'App.module.css';
+import styles from 'App.module.scss';
 
 function App() {
   return (
