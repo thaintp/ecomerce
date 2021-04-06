@@ -12,8 +12,9 @@ function App() {
     <Router>
       <div className={styles.container}>
         <TopBar />
-          <hr />
+        <hr />
         <NavBar />
+        <hr />
 
         <Switch className={styles.content}>
           <Route path="/products">

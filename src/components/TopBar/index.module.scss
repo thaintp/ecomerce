@@ -1,13 +1,8 @@
-$greyish-two: #b7b7b7;
-$greyish-brown: #4d4d4d;
-$orange-1: #ffa15f;
-$orange-2: #ff7e24;
-
+@import "../../styles/colors.scss";
 
 .container {
   display: flex;
   margin-top: 20px;
-  justify-content: space-between;
 
   .searchContainer, .logoContainer, .utilsContainer {
     display: flex;
@@ -91,5 +86,6 @@ $orange-2: #ff7e24;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: $white;
   }
 }
