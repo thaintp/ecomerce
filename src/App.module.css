@@ -1,0 +1,3 @@
+.container > :not(hr) {
+  padding: 0 130px;
+}

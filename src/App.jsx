@@ -1,19 +1,21 @@
-import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-import { NavBar } from './components';
-import { Home, Products } from './pages';
+import { TopBar, NavBar } from 'components';
+import { Home, Products } from 'pages';
+import styles from 'App.module.css';
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className={styles.container}>
+        <TopBar />
+          <hr />
         <NavBar />
 
-        <Switch>
+        <Switch className={styles.content}>
           <Route path="/products">
             <Products />
           </Route>
