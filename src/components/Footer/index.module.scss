@@ -1,0 +1,71 @@
+@import "../../styles/colors.scss";
+
+.basicLinkStyle {
+  color: $greyish-two;
+  font-stretch: normal;
+  letter-spacing: normal;
+}
+
+.brandContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 30px 0;
+
+  .logoContainer, .linksContainer, .socialsContainer {
+    display: flex;
+    flex: 1;
+    width: 100%;
+  }
+  .linksContainer {
+    flex: 2;
+    justify-content: center;
+    margin: 0 -18px;
+    * {
+      @extend .basicLinkStyle;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.57;
+      padding: 0 18px;
+    }
+  }
+  .socialsContainer {
+    justify-content: flex-end;
+  }
+
+  .logo {
+    width: 96px;
+    height: 20px;
+  }
+  .socialIcon {
+    width: 24px;
+    height: 24px;
+    margin: 0 0 0 14px;
+    padding: 4px 4px 4px;
+  }
+}
+
+.bottomBar {
+  display: flex;
+  flex-direction: row;
+  padding: 15px 0 20px 0;
+
+  .linksContainerSmall, .policyContainer {
+    display: flex;
+    flex: 1;
+    width: 100%;
+  }
+
+  .linksContainerSmall, .policyContainer {
+    margin: 0 -10px;
+    * {
+      @extend .basicLinkStyle;
+      padding: 0 10px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.83;
+    }
+  }
+  .policyContainer {
+    justify-content: flex-end;
+  }
+}

@@ -3,7 +3,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { TopBar, NavBar } from 'components';
+import { TopBar, NavBar, Footer } from 'components';
 import { Home, Products } from 'pages';
 import styles from 'App.module.scss';
 
@@ -25,6 +25,8 @@ function App() {
           </Route>
         </Switch>
 
+        <hr/>
+        <Footer />
       </div>
     </Router>
   );
