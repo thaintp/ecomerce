@@ -1,5 +1,5 @@
 import styles from './index.module.scss';
-import { ShopNowButton, CategoryPoster } from '../../components';
+import { ShopNowButton, CategoryPoster } from 'components';
 
 const Home = () => {
   return (
