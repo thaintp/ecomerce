@@ -1,6 +1,6 @@
-@import "../../styles/colors.scss";
+@import "styles/colors.scss";
 
-.container {
+.ShopNowButton {
   box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.12);
   background-color: $orange-1;
   border: none;
@@ -8,9 +8,7 @@
   &:hover {
     background-color: $orange-2;
   }
-  span {
-    width: 84px;
-    height: 24px;
+  &__text {
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;

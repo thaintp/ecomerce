@@ -1,0 +1,41 @@
+@import "styles/colors.scss";
+
+.HomePage {
+  margin-top: 20px;
+  &__shopBtn {
+    position: absolute;
+    bottom: 50px;
+    right: 70px;
+  }
+
+  &__hotDeal {
+    position: relative;
+    width: 100%;
+    height: 600px;
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__title {
+      position: absolute;
+      top: 80px;
+      right: 80px;
+      font-family: Domine;
+      font-size: 48px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 0.94;
+      letter-spacing: normal;
+      color: $white;
+    }
+  }
+
+  &__category {
+    display: flex;
+    margin: 20px -10px;
+  }
+}

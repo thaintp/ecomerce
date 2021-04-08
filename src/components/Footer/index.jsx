@@ -1,46 +1,86 @@
-import styles from './index.module.scss';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import "./style.scss";
 
 const Footer = () => {
   return (
-    <footer className={styles.container}>
-      <div className={styles.brandContainer}>
-        <div className={styles.logoContainer}>
-          <img src="images/logo.svg" alt="logo" className={styles.logo} />
+    <footer className="Footer">
+      <div className="Footer__row Footer__top">
+        <div className="Footer__item Footer__brand">
+          <img src="images/logo.svg" alt="logo" className="Footer__logo" />
         </div>
-        <div className={styles.linksContainer}>
-          <Link to="#">Home</Link>
-          <Link to="#">Products</Link>
-          <Link to="#">Services</Link>
-          <Link to="#">About Us</Link>
-          <Link to="#">Help</Link>
-          <Link to="#">Contacts</Link>
+        <div className="Footer__item Footer__top__links">
+          <Link to="#" className="Footer__link">
+            Home
+          </Link>
+          <Link to="#" className="Footer__link">
+            Products
+          </Link>
+          <Link to="#" className="Footer__link">
+            Services
+          </Link>
+          <Link to="#" className="Footer__link">
+            About Us
+          </Link>
+          <Link to="#" className="Footer__link">
+            Help
+          </Link>
+          <Link to="#" className="Footer__link">
+            Contacts
+          </Link>
         </div>
-        <div className={styles.socialsContainer}>
-          <img src="images/twitter-icon.svg" alt="twitter-icon" className={styles.socialIcon}/>
-          <img src="images/facebook-icon.svg" alt="facebook-icon" className={styles.socialIcon}/>
-          <img src="images/instagram-icon.svg" alt="instagram-icon" className={styles.socialIcon}/>
+        <div className="Footer__item Footer__socials">
+          <img
+            src="images/twitter-icon.svg"
+            alt="twitter-icon"
+            className="Footer__icon"
+          />
+          <img
+            src="images/facebook-icon.svg"
+            alt="facebook-icon"
+            className="Footer__icon"
+          />
+          <img
+            src="images/instagram-icon.svg"
+            alt="instagram-icon"
+            className="Footer__icon"
+          />
         </div>
       </div>
 
-      <hr/>
+      <hr />
 
-      <div className={styles.bottomBar}>
-        <div className={styles.linksContainerSmall}>
-          <Link to="#">Home</Link>
-          <Link to="#">Products</Link>
-          <Link to="#">Services</Link>
-          <Link to="#">About Us</Link>
-          <Link to="#">Help</Link>
-          <Link to="#">Contacts</Link>
+      <div className="Footer__row Footer__bottom">
+        <div className="Footer__item Footer__bottom__item ">
+          <Link to="#" className="Footer__link">
+            Home
+          </Link>
+          <Link to="#" className="Footer__link">
+            Products
+          </Link>
+          <Link to="#" className="Footer__link">
+            Services
+          </Link>
+          <Link to="#" className="Footer__link">
+            About Us
+          </Link>
+          <Link to="#" className="Footer__link">
+            Help
+          </Link>
+          <Link to="#" className="Footer__link">
+            Contacts
+          </Link>
         </div>
-        <div className={styles.policyContainer}>
-          <Link to="#">Privacy Policy</Link>
-          <Link to="#">Terms &#38; Conditions</Link>
+        <div className="Footer_item Footer__bottom__item ">
+          <Link to="#" className="Footer__link">
+            Privacy Policy
+          </Link>
+          <Link to="#" className="Footer__link">
+            Terms &#38; Conditions
+          </Link>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
 export default Footer;

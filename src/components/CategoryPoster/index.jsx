@@ -1,18 +1,22 @@
-import { ShopNowButton } from '../';
-import styles from './index.module.scss';
+import { ShopNowButton } from "../";
+import "./style.scss";
 
 const CategoryPoster = (props) => {
   return (
-    <div className={styles.container}>
-      <img src={props.imageSrc} alt="poster"/>
-      <div className={styles.titleContainer}>
-        <span className={styles.title}>{props.title}</span>
+    <div className="CategoryPoster">
+      <img
+        src={props.imageSrc}
+        alt="poster"
+        className="CategoryPoster__image"
+      />
+      <div className="CategoryPoster__title">
+        <span className="CategoryPoster__text">{props.title}</span>
       </div>
-      <div className={styles.shopBtn}>
+      <div className="CategoryPoster__button">
         <ShopNowButton></ShopNowButton>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default CategoryPoster;

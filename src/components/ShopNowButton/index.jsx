@@ -1,19 +1,19 @@
-import styles from './index.module.scss';
+import "./style.scss";
 
 const ShopNowButton = (props) => {
   return (
     <button
-      onClick={() => props.callback ? props.callback() : console.log()}
-      className={styles.container}
+      onClick={() => (props.callback ? props.callback() : console.log())}
+      className="ShopNowButton"
       style={{
         width: props.width ?? "140px",
         height: props.height ?? "40px",
-        fontSize: props.fontSize ?? "14px"
+        fontSize: props.fontSize ?? "14px",
       }}
     >
-      <span>Shop now</span>
+      <span className="ShopNowButton__text">Shop now</span>
     </button>
-  )
-}
+  );
+};
 
 export default ShopNowButton;

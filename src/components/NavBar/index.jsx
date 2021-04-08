@@ -1,9 +1,9 @@
-import styles from './index.module.scss';
-import Dropdown from 'react-bootstrap/Dropdown';
+import "./style.scss";
+import Dropdown from "react-bootstrap/Dropdown";
 
 const NavBar = () => {
   return (
-    <div className={styles.container}>
+    <div className="Navbar">
       <Dropdown>
         <Dropdown.Toggle variant="" id="dropdown-basic">
           Men
@@ -16,7 +16,7 @@ const NavBar = () => {
       </Dropdown>
       <Dropdown>
         <Dropdown.Toggle variant="" id="dropdown-basic">
-        Ladies
+          Ladies
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
@@ -26,7 +26,7 @@ const NavBar = () => {
       </Dropdown>
       <Dropdown>
         <Dropdown.Toggle variant="" id="dropdown-basic">
-        Girls
+          Girls
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
@@ -36,7 +36,7 @@ const NavBar = () => {
       </Dropdown>
       <Dropdown>
         <Dropdown.Toggle variant="" id="dropdown-basic">
-        Boys
+          Boys
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
@@ -45,7 +45,7 @@ const NavBar = () => {
         </Dropdown.Menu>
       </Dropdown>
     </div>
-  )
-}
+  );
+};
 
 export default NavBar;

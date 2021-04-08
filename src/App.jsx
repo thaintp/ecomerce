@@ -1,22 +1,18 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import { TopBar, NavBar, Footer } from 'components';
-import { Home, Products } from 'pages';
-import styles from 'App.module.scss';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { TopBar, NavBar, Footer } from "components";
+import { Home, Products } from "pages";
+import "style.scss";
 
 function App() {
   return (
     <Router>
-      <div className={styles.container}>
+      <div className="App">
         <TopBar />
         <hr />
         <NavBar />
         <hr />
 
-        <Switch className={styles.content}>
+        <Switch className="App__content">
           <Route path="/products">
             <Products />
           </Route>
@@ -25,7 +21,7 @@ function App() {
           </Route>
         </Switch>
 
-        <hr/>
+        <hr />
         <Footer />
       </div>
     </Router>

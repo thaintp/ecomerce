@@ -1,0 +1,88 @@
+@import "styles/colors.scss";
+
+.TopBar {
+  display: flex;
+  margin-top: 20px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+  }
+
+  &__inputSearch {
+    height: 35px;
+    width: 181px;
+    padding: 5px 37px 5px 15px;
+    border-radius: 17px;
+    border: solid 1px $greyish-two;
+    outline: none;
+  }
+
+  &__iconSearch {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin: 1px 0 0 145px;
+    padding: 2px;
+    object-fit: contain;
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  &__logo {
+    justify-content: center;
+  }
+
+  &__image {
+    height: 20px;
+    padding: 0.3px 0.2px 0.4px 0.5px;
+  }
+
+  &__utils {
+    justify-content: flex-end;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+  }
+
+  &__cart {
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+  }
+
+  &__registerBtn {
+    width: 59px;
+    font-weight: normal;
+    font-style: normal;
+    color: $greyish-brown;
+    background: none;
+    border: none;
+  }
+
+  &__loginBtn {
+    width: 120px;
+    height: 35px;
+    border-radius: 100px;
+    border: solid 1px $orange-1;
+    margin: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+
+    &__text {
+      width: 46px;
+      font-weight: bold;
+      font-style: bold;
+      text-align: center;
+      color: $orange-2;
+    }
+  }
+}

@@ -1,26 +1,35 @@
-import styles from './index.module.scss'
+import "./style.scss";
 
 const TopBar = () => {
   return (
-    <div className={styles.container}>
-      <form className={styles.searchContainer}>
-        <input type="search" placeholder="Search.." name="search" className={styles.inputSearch} />
-        <img src="images/search.svg" className={styles.iconSearch} alt="search"></img>
+    <div className="TopBar">
+      <form className="TopBar__item TopBar__search">
+        <input
+          type="search"
+          placeholder="Search.."
+          name="search"
+          className="TopBar__inputSearch"
+        />
+        <img
+          src="images/search.svg"
+          className="TopBar__iconSearch"
+          alt="search"
+        ></img>
       </form>
 
-      <div className={styles.logoContainer}>
-        <img src="images/logo.svg" className={styles.logoImage} alt="logo" />
+      <div className="TopBar__item TopBar__logo">
+        <img src="images/logo.svg" className="TopBar__image" alt="logo" />
       </div>
 
-      <div className={styles.utilsContainer}>
-        <button className={styles.registerBtn}>Register</button>
-        <button className={styles.loginBtn}>
-          <span className={styles.loginText}>Log In</span>
+      <div className="TopBar__item TopBar__utils">
+        <button className="TopBar__registerBtn TopBar__text">Register</button>
+        <button className="TopBar__loginBtn">
+          <span className="TopBar__loginBtn__text TopBar__text">Log In</span>
         </button>
-        <img src="images/cart.svg" className={styles.cartImage} alt="cart" />
+        <img src="images/cart.svg" className="TopBar__cart" alt="cart" />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default TopBar;
