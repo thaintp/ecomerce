@@ -1,0 +1,21 @@
+@import "styles/colors.scss";
+
+.FilterItem {
+  button {
+    text-align: left;
+    outline: none;
+    background-color: $white;
+    padding: 0;
+    display: block;
+    border-width: 0 0 1px 0;
+    &::after {
+      content: "▼";
+      float: right;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__tags {
+    padding: 15px 0;
+  }
+}

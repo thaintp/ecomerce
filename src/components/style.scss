@@ -1,0 +1,18 @@
+@import "styles/colors.scss";
+
+.sidebar {
+  &__title {
+    font-size: 16px;
+    color: $dark-grey;
+    margin-bottom: 30px;
+  }
+  &__text {
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    &--bold {
+      font-weight: bold;
+    }
+  }
+}

@@ -6,7 +6,7 @@ const Home = () => {
     <div className="HomePage">
       <div className="HomePage__hotDeal">
         <img
-          src="images/hot_deal.jpg"
+          src="/images/hot_deal.jpg"
           alt="hot deal"
           className="HomePage__hotDeal__image"
         />
@@ -20,16 +20,26 @@ const Home = () => {
         </div>
       </div>
       <div className="HomePage__category">
-        <CategoryPoster imageSrc="images/men.jpg" title="Men"></CategoryPoster>
         <CategoryPoster
-          imageSrc="images/lady.jpg"
+          imageSrc="/images/men.jpg"
+          title="Men"
+          href="/products/men"
+        />
+        <CategoryPoster
+          imageSrc="/images/lady.jpg"
           title="Ladies"
-        ></CategoryPoster>
+          href="/products"
+        />
         <CategoryPoster
-          imageSrc="images/girl.jpg"
+          imageSrc="/images/girl.jpg"
           title="Girls"
-        ></CategoryPoster>
-        <CategoryPoster imageSrc="images/boy.jpg" title="Boys"></CategoryPoster>
+          href="/products"
+        />
+        <CategoryPoster
+          imageSrc="/images/boy.jpg"
+          title="Boys"
+          href="/products"
+        />
       </div>
     </div>
   );

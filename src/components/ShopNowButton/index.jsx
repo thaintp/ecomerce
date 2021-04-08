@@ -1,18 +1,19 @@
 import "./style.scss";
+import Button from "react-bootstrap/Button";
 
 const ShopNowButton = (props) => {
   return (
-    <button
-      onClick={() => (props.callback ? props.callback() : console.log())}
+    <Button
       className="ShopNowButton"
       style={{
         width: props.width ?? "140px",
         height: props.height ?? "40px",
         fontSize: props.fontSize ?? "14px",
       }}
+      href={props.href}
     >
       <span className="ShopNowButton__text">Shop now</span>
-    </button>
+    </Button>
   );
 };
 

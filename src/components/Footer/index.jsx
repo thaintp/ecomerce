@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="Footer">
       <div className="Footer__row Footer__top">
         <div className="Footer__item Footer__brand">
-          <img src="images/logo.svg" alt="logo" className="Footer__logo" />
+          <img src="/images/logo.svg" alt="logo" className="Footer__logo" />
         </div>
         <div className="Footer__item Footer__top__links">
           <Link to="#" className="Footer__link">
@@ -30,17 +30,17 @@ const Footer = () => {
         </div>
         <div className="Footer__item Footer__socials">
           <img
-            src="images/twitter-icon.svg"
+            src="/images/twitter-icon.svg"
             alt="twitter-icon"
             className="Footer__icon"
           />
           <img
-            src="images/facebook-icon.svg"
+            src="/images/facebook-icon.svg"
             alt="facebook-icon"
             className="Footer__icon"
           />
           <img
-            src="images/instagram-icon.svg"
+            src="/images/instagram-icon.svg"
             alt="instagram-icon"
             className="Footer__icon"
           />

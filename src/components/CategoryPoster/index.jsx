@@ -13,7 +13,7 @@ const CategoryPoster = (props) => {
         <span className="CategoryPoster__text">{props.title}</span>
       </div>
       <div className="CategoryPoster__button">
-        <ShopNowButton></ShopNowButton>
+        <ShopNowButton href={props.href}></ShopNowButton>
       </div>
     </div>
   );

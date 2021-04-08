@@ -1,0 +1,12 @@
+@import "styles/colors.scss";
+
+.Category {
+  &__tag {
+    font-size: 14px;
+    color: $greyish-brown;
+    padding-bottom: 10px;
+    &--active {
+      color: $orange-2;
+    }
+  }
+}

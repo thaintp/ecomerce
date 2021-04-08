@@ -11,14 +11,14 @@ const TopBar = () => {
           className="TopBar__inputSearch"
         />
         <img
-          src="images/search.svg"
+          src="/images/search.svg"
           className="TopBar__iconSearch"
           alt="search"
         ></img>
       </form>
 
       <div className="TopBar__item TopBar__logo">
-        <img src="images/logo.svg" className="TopBar__image" alt="logo" />
+        <img src="/images/logo.svg" className="TopBar__image" alt="logo" />
       </div>
 
       <div className="TopBar__item TopBar__utils">
@@ -26,7 +26,7 @@ const TopBar = () => {
         <button className="TopBar__loginBtn">
           <span className="TopBar__loginBtn__text TopBar__text">Log In</span>
         </button>
-        <img src="images/cart.svg" className="TopBar__cart" alt="cart" />
+        <img src="/images/cart.svg" className="TopBar__cart" alt="cart" />
       </div>
     </div>
   );

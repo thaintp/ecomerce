@@ -13,11 +13,11 @@ function App() {
         <hr />
 
         <Switch className="App__content">
-          <Route path="/products">
-            <Products />
-          </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/products/:category">
+            <Products />
           </Route>
         </Switch>
 
