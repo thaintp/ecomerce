@@ -1,0 +1,29 @@
+@import "styles/colors.scss";
+
+.ProductItem {
+  width: 100%;
+  height: 345px;
+  &__image {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+  }
+  &__text {
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+  }
+  &__name {
+    margin: 10px 0 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.43;
+    color: $dark-grey;
+  }
+  &__price {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.83;
+    color: $greyish-brown;
+  }
+}

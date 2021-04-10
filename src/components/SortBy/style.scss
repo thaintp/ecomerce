@@ -1,0 +1,8 @@
+.SortBy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  &__choice {
+    margin-left: 10px;
+  }
+}
