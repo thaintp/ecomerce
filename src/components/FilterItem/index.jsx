@@ -11,7 +11,7 @@ const FilterItem = (props) => {
       <Accordion.Collapse eventKey={props.eventKey}>
         <div className="FilterItem__tags">
           {props.list.map((item) => (
-            <FilterItemTag item={item} />
+            <FilterItemTag item={item} key={item} />
           ))}
         </div>
       </Accordion.Collapse>

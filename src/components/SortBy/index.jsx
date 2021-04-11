@@ -3,7 +3,7 @@ import "./style.scss";
 const SortBy = () => {
   return (
     <form className="SortBy">
-      <label for="choice">Sort by:</label>
+      <label>Sort by:</label>
       <select name="choice" className="SortBy__choice">
         <option value="popularity">Popularity</option>
         <option value="nameAsc">Name: A- Z</option>

@@ -26,17 +26,13 @@
       margin: 0 -10px;
     }
   }
-  &__col5 {
-    width: 20%;
-    padding: 0 10px !important;
-  }
   &__sortBy {
     padding: 0 10px !important;
-    width: 30%;
+    width: 70%;
   }
   &__pagination {
     padding: 0 10px !important;
-    width: 70%;
+    width: 30%;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;

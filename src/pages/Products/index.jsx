@@ -8,7 +8,7 @@ import {
   SortBy,
   ProductsBreadcrumb,
   Pagination,
-  ProductItem,
+  ProductsList,
 } from "components";
 
 const Products = () => {
@@ -33,15 +33,7 @@ const Products = () => {
                 </div>
               </Row>
               <Row>
-                {Array.from(Array(9).keys()).map((x) => (
-                  <div className="ProductsPage__col5">
-                    <ProductItem
-                      imageSrc="/images/dress/rectangle-copy-54.jpg"
-                      name="Collete Stretch Linen Minidress"
-                      price={69.0}
-                    />
-                  </div>
-                ))}
+                <ProductsList />
               </Row>
             </Container>
           </Col>
