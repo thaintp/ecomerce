@@ -1,8 +1,15 @@
 import axios from "axios";
 
+const serverURL = "http://localhost:7070";
+
 const fetchProducts = async () => {
-  const data = await axios.get("http://localhost:7070/api/products/");
-  return JSON.stringify(data.data);
+  const data = await axios.get(`${serverURL}/api/products/`);
+  return data.data;
 };
 
-export default fetchProducts;
+const fetchProduct = async (id) => {
+  const data = await axios.get(`${serverURL}/api/products/${id}`);
+  return data.data;
+};
+
+export { fetchProducts, fetchProduct };

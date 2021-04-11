@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import "./style.scss";
 import Slash from "./Slash";
 
-const ProductsBreadcrumb = () => {
+const ProductsBreadcrumb = ({ name }) => {
   const { category } = useParams();
 
   return (
@@ -18,6 +18,14 @@ const ProductsBreadcrumb = () => {
       <Link to="#" className="ProductsBreadcrumb__link">
         Vest
       </Link>
+      {name && (
+        <>
+          <Slash />
+          <Link to="#" className="ProductsBreadcrumb__link">
+            {name}
+          </Link>
+        </>
+      )}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { TopBar, NavBar, Footer } from "components";
-import { Home, Products } from "pages";
+import { Home, Products, Detail } from "pages";
 import "style.scss";
 
 function App() {
@@ -15,6 +15,9 @@ function App() {
         <Switch className="App__content">
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/products/:category/:id">
+            <Detail />
           </Route>
           <Route path="/products/:category">
             <Products />

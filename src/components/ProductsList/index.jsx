@@ -1,23 +1,24 @@
 import "./styles.scss";
 import { useEffect, useState } from "react";
 import { ProductItem } from "components";
-import fetchProducts from "api/product";
+import { fetchProducts } from "api/product";
 
 const ProductsList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetchProducts().then((products) => setProducts(JSON.parse(products)));
+    fetchProducts().then((products) => setProducts(products));
   }, []);
 
   return (
     <div className="ProductsList">
       {products.map((product) => (
-        <div className="ProductsList__col5" key={product.__id}>
+        <div className="ProductsList__col5" key={product._id}>
           <ProductItem
             imageSrc={product.photos[0]}
             name={product.name}
             price={product.price}
+            id={product._id}
           />
         </div>
       ))}

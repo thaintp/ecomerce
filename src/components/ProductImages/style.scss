@@ -1,0 +1,12 @@
+.ProductImages {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  row-gap: 25px;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

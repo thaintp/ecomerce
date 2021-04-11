@@ -1,0 +1,26 @@
+@import "styles/colors.scss";
+
+.SizePicker {
+  &__button {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: $dark-grey;
+    border: solid 1px;
+    outline: none;
+    margin-right: 16px;
+  }
+  &__active {
+    color: $white;
+    background-color: $orange-1;
+  }
+  &__disable {
+    color: $greyish-brown;
+    border-color: $white_four;
+  }
+}
