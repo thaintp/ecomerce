@@ -43,46 +43,4 @@
   &__utils {
     justify-content: flex-end;
   }
-
-  &__text {
-    font-size: 14px;
-    font-stretch: normal;
-    line-height: 1.57;
-    letter-spacing: normal;
-  }
-
-  &__cart {
-    width: 24px;
-    height: 24px;
-    padding: 2px;
-  }
-
-  &__registerBtn {
-    width: 59px;
-    font-weight: normal;
-    font-style: normal;
-    color: $greyish-brown;
-    background: none;
-    border: none;
-  }
-
-  &__loginBtn {
-    width: 120px;
-    height: 35px;
-    border-radius: 100px;
-    border: solid 1px $orange-1;
-    margin: 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $white;
-
-    &__text {
-      width: 46px;
-      font-weight: bold;
-      font-style: bold;
-      text-align: center;
-      color: $orange-2;
-    }
-  }
 }

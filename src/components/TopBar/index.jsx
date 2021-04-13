@@ -1,4 +1,5 @@
 import "./style.scss";
+import { AuthButtons } from "components";
 
 const TopBar = () => {
   return (
@@ -22,10 +23,7 @@ const TopBar = () => {
       </div>
 
       <div className="TopBar__item TopBar__utils">
-        <button className="TopBar__registerBtn TopBar__text">Register</button>
-        <button className="TopBar__loginBtn">
-          <span className="TopBar__loginBtn__text TopBar__text">Log In</span>
-        </button>
+        <AuthButtons />
         <img src="/images/cart.svg" className="TopBar__cart" alt="cart" />
       </div>
     </div>

@@ -21,3 +21,8 @@ export { default as ProductImages } from "./ProductImages";
 export { default as ProductOptions } from "./ProductOptions";
 export { default as RaterBar } from "./RaterBar";
 export { default as SizePicker } from "./SizePicker";
+export { default as ColorPicker } from "./ColorPicker";
+export { default as QuantityChooser } from "./QuantityChooser";
+export { default as BrandRecommendations } from "./BrandRecommendations";
+export { default as AuthButtons } from "./AuthButtons";
+export { default as RegisterModal } from "./RegisterModal";

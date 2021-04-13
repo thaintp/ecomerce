@@ -14,7 +14,7 @@ const Detail = () => {
   return (
     <div className="Detail">
       <ProductsBreadcrumb name={product.name} />
-      <ProductDetail product={product} />
+      <ProductDetail className="Detail__product" product={product} />
     </div>
   );
 };

@@ -7,9 +7,14 @@ const fetchProducts = async () => {
   return data.data;
 };
 
+const fetchProductsByBrand = async (brand) => {
+  const data = await axios.get(`${serverURL}/api/products/brand/${brand}`);
+  return data.data;
+};
+
 const fetchProduct = async (id) => {
   const data = await axios.get(`${serverURL}/api/products/${id}`);
   return data.data;
 };
 
-export { fetchProducts, fetchProduct };
+export { fetchProducts, fetchProduct, fetchProductsByBrand };
