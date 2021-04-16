@@ -3,6 +3,7 @@
   height: 100%;
   display: grid;
   row-gap: 25px;
+  grid-template-rows: auto auto auto auto;
 
   &__image {
     width: 100%;

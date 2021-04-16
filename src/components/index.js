@@ -26,3 +26,6 @@ export { default as QuantityChooser } from "./QuantityChooser";
 export { default as BrandRecommendations } from "./BrandRecommendations";
 export { default as AuthButtons } from "./AuthButtons";
 export { default as RegisterModal } from "./RegisterModal";
+export { default as LoginModal } from "./LoginModal";
+export { default as Account } from "./Account";
+export { default as Error } from "./Error";

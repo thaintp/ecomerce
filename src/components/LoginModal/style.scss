@@ -1,0 +1,60 @@
+@import "styles/colors.scss";
+
+.login-modal__text {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: $greyish-brown;
+}
+.login-modal__title {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.31;
+  text-align: center;
+  color: $dark-grey;
+}
+.login-modal__footer {
+  display: flex;
+  justify-content: center !important;
+  &__text {
+    font-weight: 500;
+  }
+}
+.login-modal__password {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.login-modal__rememberPassword {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.login-modal__checkbox {
+  margin-right: 6px;
+}
+.login-modal__link {
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: $pumpkin-orange;
+  border: solid $pumpkin-orange;
+  border-width: 0 0 1px 0;
+  margin: 0 4px;
+  &:hover {
+    color: $orange-1;
+  }
+}
+
+.login-modal__forgotPassword {
+  font-weight: 600;
+  color: $greyish-brown;
+}

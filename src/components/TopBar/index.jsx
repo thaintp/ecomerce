@@ -1,5 +1,6 @@
 import "./style.scss";
 import { AuthButtons } from "components";
+import { Link } from "react-router-dom";
 
 const TopBar = () => {
   return (
@@ -19,7 +20,9 @@ const TopBar = () => {
       </form>
 
       <div className="TopBar__item TopBar__logo">
-        <img src="/images/logo.svg" className="TopBar__image" alt="logo" />
+        <Link to="/">
+          <img src="/images/logo.svg" className="TopBar__image" alt="logo" />
+        </Link>
       </div>
 
       <div className="TopBar__item TopBar__utils">

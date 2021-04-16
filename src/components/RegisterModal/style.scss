@@ -1,6 +1,6 @@
 @import "styles/colors.scss";
 
-.RegisterModal__title {
+.register-modal__title {
   font-size: 32px;
   font-weight: bold;
   font-stretch: normal;
@@ -10,15 +10,15 @@
   text-align: center;
   color: $dark-grey;
 }
-.RegisterModal__policy {
+.register-modal__policy {
   text-align: center;
   margin: 40px 80px 50px 80px;
 }
-.RegisterModal__footer {
+.register-modal__footer {
   display: flex;
   justify-content: center !important;
 }
-.RegisterModal__link {
+.register-modal__link {
   font-size: 14px;
   font-weight: bold;
   font-stretch: normal;
