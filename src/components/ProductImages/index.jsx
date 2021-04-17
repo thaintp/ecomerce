@@ -3,13 +3,10 @@ import "./style.scss";
 const ProductImages = ({ photos }) => {
   return (
     <div className="ProductImages">
-      {[0].map((val) => (
-        <img
-          src={photos ? photos[0] : ""}
-          alt="coverImage"
-          className="ProductImages__image"
-          key={val}
-        />
+      {photos?.map((photo) => (
+        <div className="ProductImages__imageContainer" key={photo}>
+          <img src={photo} alt="coverImage" className="ProductImages__image" />
+        </div>
       ))}
     </div>
   );

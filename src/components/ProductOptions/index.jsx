@@ -17,13 +17,13 @@ const ProductOptions = ({ product }) => {
         </div>
         <div className="ProductOptions__text ProductOptions__subText">Size</div>
         <div className="ProductOptions__sizePicker">
-          <SizePicker />
+          <SizePicker sizes={product.sizes} />
         </div>
         <div className="ProductOptions__text ProductOptions__subText">
           Color
         </div>
         <div className="ProductOptions__colorPicker">
-          <ColorPicker />
+          <ColorPicker colors={product.colors} />
         </div>
         <div className="ProductOptions__quantityChooser">
           <div className="ProductOptions__text ProductOptions__subText ProductOptions__quantity">

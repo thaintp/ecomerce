@@ -1,21 +1,19 @@
 import "./style.scss";
+import { useState } from "react";
+import classNames from "classnames";
 
 const ColorPicker = (props) => {
+  const [state, setState] = useState("");
   return (
     <div className="ColorPicker">
-      {(
-        props.colors ?? [
-          "#ff5f6d",
-          "rgba(255, 195, 113, 0.5)",
-          "rgba(95, 109, 255, 0.5)",
-          "rgba(255, 161, 95, 0.5)",
-          "rgba(61, 61, 63, 0.5)",
-          "rgba(237, 237, 237, 0.5)",
-        ]
-      ).map((color) => (
+      {props.colors?.map((color) => (
         <span
-          className="ColorPicker__item"
+          className={classNames("ColorPicker__item", {
+            "ColorPicker__item--active": state === color,
+          })}
           style={{ backgroundColor: color }}
+          key={color}
+          onClick={() => setState(color)}
         ></span>
       ))}
     </div>

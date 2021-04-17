@@ -1,9 +1,15 @@
 .ProductImages {
   width: 100%;
-  height: 100%;
-  display: grid;
-  row-gap: 25px;
-  grid-template-rows: auto auto auto auto;
+  height: calc(100% + 25px);
+  margin: -12.5px 0;
+  display: flex;
+  flex-direction: column;
+
+  &__imageContainer {
+    height: 25%;
+    width: 100%;
+    padding: 12.5px 0;
+  }
 
   &__image {
     width: 100%;
