@@ -1,6 +1,6 @@
 @import "styles/colors.scss";
 
-.ShopNowButton {
+.shop-now-button {
   box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.12);
   background-color: $orange-1 !important;
   border: none !important;
@@ -8,13 +8,17 @@
   &:hover {
     background-color: $orange-2 !important;
   }
-  &__text {
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: center;
-    color: $white;
-  }
+}
+a.shop-now-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop-now-button__text {
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $white;
 }

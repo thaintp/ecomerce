@@ -2,10 +2,10 @@ import "./style.scss";
 
 const ProductImages = ({ photos }) => {
   return (
-    <div className="ProductImages">
+    <div className="product-images">
       {photos?.map((photo) => (
-        <div className="ProductImages__imageContainer" key={photo}>
-          <img src={photo} alt="coverImage" className="ProductImages__image" />
+        <div className="product-images__image-container" key={photo}>
+          <img src={photo} alt="coverImage" className="product-images__image" />
         </div>
       ))}
     </div>

@@ -3,15 +3,15 @@ import { ShopNowButton, CategoryPoster } from "components";
 
 const Home = () => {
   return (
-    <div className="HomePage">
-      <div className="HomePage__hotDeal">
+    <div className="home-page">
+      <div className="home-page__hotDeal">
         <img
           src="/images/hot_deal.jpg"
           alt="hot deal"
-          className="HomePage__hotDeal__image"
+          className="home-page__hotDeal__image"
         />
-        <div className="HomePage__hotDeal__title">OUTFIT OF THE WEEK</div>
-        <div className="HomePage__shopBtn">
+        <div className="home-page__hotDeal__title">OUTFIT OF THE WEEK</div>
+        <div className="home-page__shopBtn">
           <ShopNowButton
             width="180px"
             height="50px"
@@ -19,7 +19,7 @@ const Home = () => {
           ></ShopNowButton>
         </div>
       </div>
-      <div className="HomePage__category">
+      <div className="home-page__category">
         <CategoryPoster
           imageSrc="/images/men.jpg"
           title="Men"

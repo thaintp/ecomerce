@@ -1,41 +1,40 @@
 @import "styles/colors.scss";
 
-.HomePage {
+.home-page {
   margin-top: 20px;
-  &__shopBtn {
-    position: absolute;
-    bottom: 50px;
-    right: 70px;
-  }
+}
+.home-page__shopBtn {
+  position: absolute;
+  bottom: 50px;
+  right: 70px;
+}
 
-  &__hotDeal {
-    position: relative;
-    width: 100%;
-    height: 600px;
+.home-page__hotDeal {
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+.home-page__hotDeal__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    &__image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.home-page__hotDeal__title {
+  position: absolute;
+  top: 80px;
+  right: 80px;
+  font-family: Domine;
+  font-size: 48px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.94;
+  letter-spacing: normal;
+  color: $white;
+}
 
-    &__title {
-      position: absolute;
-      top: 80px;
-      right: 80px;
-      font-family: Domine;
-      font-size: 48px;
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 0.94;
-      letter-spacing: normal;
-      color: $white;
-    }
-  }
-
-  &__category {
-    display: flex;
-    margin: 20px -10px;
-  }
+.home-page__category {
+  display: flex;
+  margin: 20px -10px;
 }

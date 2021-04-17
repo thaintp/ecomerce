@@ -1,14 +1,12 @@
-.ColorPicker {
-  &__item {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 20px;
-    cursor: pointer;
-    padding: 2px;
-    &--active {
-      border: solid 1px;
-    }
-  }
+.color-picker__item {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  cursor: pointer;
+  padding: 2px;
+}
+.color-picker__item--active {
+  border: solid 1px;
 }

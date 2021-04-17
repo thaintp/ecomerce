@@ -11,9 +11,9 @@ const ProductsList = () => {
   }, []);
 
   return (
-    <div className="ProductsList">
+    <div className="products-list">
       {products.map((product) => (
-        <div className="ProductsList__col5" key={product._id}>
+        <div className="products-list__col5" key={product._id}>
           <ProductItem
             imageSrc={product.photos[0]}
             name={product.name}

@@ -1,68 +1,64 @@
 @import "styles/colors.scss";
 
-.Footer {
-  &__item {
-    display: flex;
-    flex: 1;
-    width: 100%;
-  }
+.footer__item {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
 
-  &__link {
-    color: $greyish-two;
-    font-stretch: normal;
-    letter-spacing: normal;
-    &:hover {
-      color: $orange-1;
-    }
+.footer__link {
+  color: $greyish-two;
+  font-stretch: normal;
+  letter-spacing: normal;
+  &:hover {
+    color: $orange-1;
   }
+}
 
-  &__row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+.footer__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
-  &__top {
-    &__links {
-      flex: 3;
-      justify-content: center;
-      margin: 0 -18px;
-      * {
-        font-size: 14px;
-        font-weight: normal;
-        line-height: 1.57;
-        padding: 0 18px;
-      }
-    }
+.footer__top__links {
+  flex: 3;
+  justify-content: center;
+  margin: 0 -18px;
+  * {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.57;
+    padding: 0 18px;
   }
-  &__brand {
-    display: flex;
-    flex-direction: row;
-    padding: 30px 0;
-  }
-  &__logo {
-    width: 96px;
-    height: 20px;
-  }
-  &__socials {
-    justify-content: flex-end;
-  }
-  &__icon {
-    width: 24px;
-    height: 24px;
-    margin: 0 0 0 14px;
-    padding: 4px 4px 4px;
-  }
-  &__bottom {
-    padding: 15px 0 20px 0;
-    &__item {
-      margin: 0 -10px;
-      * {
-        padding: 0 10px;
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 1.83;
-      }
-    }
+}
+.footer__brand {
+  display: flex;
+  flex-direction: row;
+  padding: 30px 0;
+}
+.footer__logo {
+  width: 96px;
+  height: 20px;
+}
+.footer__socials {
+  justify-content: flex-end;
+}
+.footer__icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 0 0 14px;
+  padding: 4px 4px 4px;
+}
+.footer__bottom {
+  padding: 15px 0 20px 0;
+}
+.footer__bottom__item {
+  margin: 0 -10px;
+  * {
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.83;
   }
 }

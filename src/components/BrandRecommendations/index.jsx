@@ -9,20 +9,20 @@ const BrandRecommendations = ({ brand }) => {
   }, [brand]);
 
   return (
-    <div className="BrandRecommendations">
-      <div className="BrandRecommendations__text BrandRecommendations__title">
+    <div className="brand-recommendations">
+      <div className="brand-recommendations__text brand-recommendations__title">
         More from
       </div>
-      <div className="BrandRecommendations__text BrandRecommendations__shop">
+      <div className="brand-recommendations__text brand-recommendations__shop">
         {brand}
       </div>
-      <div className="BrandRecommendations_images">
+      <div className="brand-recommendations_images">
         {products.map((product) => (
-          <div className="BrandRecommendations__imageContainer" key={product}>
+          <div className="brand-recommendations__image-container" key={product}>
             <img
               src={product.photos[0]}
               alt="productImage"
-              className="BrandRecommendations__image"
+              className="brand-recommendations__image"
             />
           </div>
         ))}

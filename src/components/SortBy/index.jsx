@@ -2,9 +2,9 @@ import "./style.scss";
 
 const SortBy = () => {
   return (
-    <form className="SortBy">
+    <form className="sort-by">
       <label>Sort by:</label>
-      <select name="choice" className="SortBy__choice">
+      <select name="choice" className="sort-by__choice">
         <option value="popularity">Popularity</option>
         <option value="nameAsc">Name: A- Z</option>
         <option value="priceAsc">Price: lowest to highest</option>

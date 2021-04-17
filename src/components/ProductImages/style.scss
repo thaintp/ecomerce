@@ -1,20 +1,19 @@
-.ProductImages {
+.product-images {
   width: 100%;
   height: calc(100% + 25px);
   margin: -12.5px 0;
   display: flex;
   flex-direction: column;
+}
+.product-images__image-container {
+  height: 25%;
+  width: 100%;
+  padding: 12.5px 0;
+}
 
-  &__imageContainer {
-    height: 25%;
-    width: 100%;
-    padding: 12.5px 0;
-  }
-
-  &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-  }
+.product-images__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
 }

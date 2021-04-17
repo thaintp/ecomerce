@@ -1,8 +1,8 @@
-.ProductDetail {
+.product-detail {
   min-height: 540px;
   width: 100%;
   margin-top: 30px;
-  &__images {
-    padding: 0 !important;
-  }
+}
+.product-detail__images {
+  padding: 0 !important;
 }

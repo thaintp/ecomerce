@@ -4,30 +4,30 @@ import { Link } from "react-router-dom";
 
 const TopBar = () => {
   return (
-    <div className="TopBar">
-      <form className="TopBar__item TopBar__search">
+    <div className="top-bar">
+      <form className="top-bar__item top-bar__search">
         <input
           type="search"
           placeholder="Search.."
           name="search"
-          className="TopBar__inputSearch"
+          className="top-bar__inputSearch"
         />
         <img
           src="/images/search.svg"
-          className="TopBar__iconSearch"
+          className="top-bar__iconSearch"
           alt="search"
         ></img>
       </form>
 
-      <div className="TopBar__item TopBar__logo">
+      <div className="top-bar__item top-bar__logo">
         <Link to="/">
-          <img src="/images/logo.svg" className="TopBar__image" alt="logo" />
+          <img src="/images/logo.svg" className="top-bar__image" alt="logo" />
         </Link>
       </div>
 
-      <div className="TopBar__item TopBar__utils">
+      <div className="top-bar__item top-bar__utils">
         <AuthButtons />
-        <img src="/images/cart.svg" className="TopBar__cart" alt="cart" />
+        <img src="/images/cart.svg" className="top-bar__cart" alt="cart" />
       </div>
     </div>
   );

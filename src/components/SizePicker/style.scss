@@ -1,22 +1,20 @@
 @import "styles/colors.scss";
 
-.SizePicker {
-  &__button {
-    width: 40px;
-    height: 40px;
-    font-size: 14px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.57;
-    letter-spacing: normal;
-    color: $dark-grey;
-    border: solid 1px;
-    outline: none;
-    margin-right: 16px;
-    &--active {
-      color: $white;
-      background-color: $orange-1;
-    }
-  }
+.size-picker__button {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: $dark-grey;
+  border: solid 1px;
+  outline: none;
+  margin-right: 16px;
+}
+.size-picker__button--active {
+  color: $white;
+  background-color: $orange-1;
 }

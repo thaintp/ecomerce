@@ -1,24 +1,24 @@
 @import "styles/colors.scss";
 
-.RaterBar {
+.rater-bar {
   display: flex;
   flex-direction: row;
   align-items: center;
-  &__rater {
-    margin-bottom: 4px;
-  }
-  &__divider {
-    margin: 0px 10px;
-    color: $brown-grey;
-  }
-  &__review {
-    margin-top: 4px;
-    font-size: 12px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.83;
-    letter-spacing: normal;
-    color: $dark-grey;
-  }
+}
+.rater-bar__rater {
+  margin-bottom: 4px;
+}
+.rater-bar__divider {
+  margin: 0px 10px;
+  color: $brown-grey;
+}
+.rater-bar__review {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.83;
+  letter-spacing: normal;
+  color: $dark-grey;
 }

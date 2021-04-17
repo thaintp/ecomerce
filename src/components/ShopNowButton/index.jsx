@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 const ShopNowButton = (props) => {
   return (
     <Button
-      className="ShopNowButton"
+      className="shop-now-button"
       style={{
         width: props.width ?? "140px",
         height: props.height ?? "40px",
@@ -12,7 +12,7 @@ const ShopNowButton = (props) => {
       }}
       href={props.href}
     >
-      <span className="ShopNowButton__text">Shop now</span>
+      <span className="shop-now-button__text">Shop now</span>
     </Button>
   );
 };

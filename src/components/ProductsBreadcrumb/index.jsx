@@ -6,22 +6,22 @@ const ProductsBreadcrumb = ({ name }) => {
   const { category } = useParams();
 
   return (
-    <div className="ProductsBreadcrumb">
-      <Link to="/" className="ProductsBreadcrumb__link">
+    <div className="products-breadcrumb">
+      <Link to="/" className="products-breadcrumb__link">
         Home
       </Link>
       <Slash />
-      <Link to={`/products/${category}`} className="ProductsBreadcrumb__link">
+      <Link to={`/products/${category}`} className="products-breadcrumb__link">
         {category}
       </Link>
       <Slash />
-      <Link to="#" className="ProductsBreadcrumb__link">
+      <Link to="#" className="products-breadcrumb__link">
         Vest
       </Link>
       {name && (
         <>
           <Slash />
-          <Link to="#" className="ProductsBreadcrumb__link">
+          <Link to="#" className="products-breadcrumb__link">
             {name}
           </Link>
         </>

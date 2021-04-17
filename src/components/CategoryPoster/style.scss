@@ -1,6 +1,6 @@
 @import "styles/colors.scss";
 
-.CategoryPoster {
+.category-poster {
   position: relative;
   display: flex;
   flex: 1;
@@ -8,39 +8,39 @@
   height: 400px;
   padding: 0 10px;
   justify-content: center;
+}
 
-  &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.category-poster__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  &__title {
-    position: absolute;
-    bottom: 80px;
-    padding: 6px;
-    border-style: none none solid none;
-    border-color: $white-six;
-    border-width: 1px;
-    width: 215px;
-    display: flex;
-    justify-content: center;
-  }
+.category-poster__title {
+  position: absolute;
+  bottom: 80px;
+  padding: 6px;
+  border-style: none none solid none;
+  border-color: $white-six;
+  border-width: 1px;
+  width: 215px;
+  display: flex;
+  justify-content: center;
+}
 
-  &__text {
-    font-family: Domine;
-    font-size: 24px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.33;
-    letter-spacing: normal;
-    text-align: center;
-    color: $white;
-  }
+.category-poster__text {
+  font-family: Domine;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+  color: $white;
+}
 
-  &__button {
-    position: absolute;
-    bottom: 24px;
-  }
+.category-poster__button {
+  position: absolute;
+  bottom: 24px;
 }

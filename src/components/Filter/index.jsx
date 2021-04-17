@@ -4,9 +4,9 @@ import Accordion from "react-bootstrap/Accordion";
 
 const Filter = () => {
   return (
-    <div className="Filter">
+    <div className="filter">
       <div className="sidebar__title sidebar__text--bold">Filter</div>
-      <div className="Filter__list">
+      <div className="filter__list">
         <Accordion>
           <FilterItem title="Size" list={["S", "M", "L"]} eventKey="0" />
           <FilterItem

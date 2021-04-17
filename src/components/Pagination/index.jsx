@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 const Pagination = (props) => {
   return (
-    <div className="Pagination">
+    <div className="pagination">
       <Button variant="light">
         <FaAngleLeft />
       </Button>

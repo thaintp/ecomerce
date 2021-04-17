@@ -3,16 +3,16 @@ import "./style.scss";
 
 const CategoryPoster = (props) => {
   return (
-    <div className="CategoryPoster">
+    <div className="category-poster">
       <img
         src={props.imageSrc}
         alt="poster"
-        className="CategoryPoster__image"
+        className="category-poster__image"
       />
-      <div className="CategoryPoster__title">
-        <span className="CategoryPoster__text">{props.title}</span>
+      <div className="category-poster__title">
+        <span className="category-poster__text">{props.title}</span>
       </div>
-      <div className="CategoryPoster__button">
+      <div className="category-poster__button">
         <ShopNowButton href={props.href}></ShopNowButton>
       </div>
     </div>

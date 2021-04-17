@@ -7,7 +7,7 @@ const AuthButtons = () => {
   const { account } = useSelector((state) => state.auth);
   const [modal, setModal] = useState(0);
   return (
-    <div className="AuthButtons">
+    <div className="auth-buttons">
       {account ? (
         <Account account={account} />
       ) : (
@@ -15,13 +15,16 @@ const AuthButtons = () => {
           <LoginModal modal={modal} setModal={setModal} />
           <RegisterModal modal={modal} setModal={setModal} />
           <button
-            className="AuthButtons__registerBtn AuthButtons__text"
+            className="auth-buttons__registerBtn auth-buttons__text"
             onClick={() => setModal(2)}
           >
             Register
           </button>
-          <button className="AuthButtons__loginBtn" onClick={() => setModal(1)}>
-            <span className="AuthButtons__loginBtn__text AuthButtons__text">
+          <button
+            className="auth-buttons__loginBtn"
+            onClick={() => setModal(1)}
+          >
+            <span className="auth-buttons__loginBtn__text auth-buttons__text">
               Log In
             </span>
           </button>
@@ -32,5 +35,3 @@ const AuthButtons = () => {
 };
 
 export default AuthButtons;
-
-// export default AuthButtons;

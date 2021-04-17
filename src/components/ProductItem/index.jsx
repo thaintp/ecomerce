@@ -4,19 +4,21 @@ import { Link, useParams } from "react-router-dom";
 const ProductItem = (props) => {
   const { category } = useParams();
   return (
-    <div className="ProductItem">
+    <div className="product-item">
       <img
         src={props.imageSrc}
         alt="productImage"
-        className="ProductItem__image"
+        className="product-item__image"
       />
       <Link
-        className="ProductItem__text ProductItem__name"
+        className="product-item__text product-item__name"
         to={`/products/${category}/${props.id}`}
       >
         {props.name}
       </Link>
-      <div className="ProductItem__text ProductItem__price">${props.price}</div>
+      <div className="product-item__text product-item__price">
+        ${props.price}
+      </div>
     </div>
   );
 };

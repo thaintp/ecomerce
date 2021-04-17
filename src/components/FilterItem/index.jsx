@@ -4,12 +4,12 @@ import { FilterItemTag } from "components";
 
 const FilterItem = (props) => {
   return (
-    <div className="FilterItem">
+    <div className="filter-item">
       <Accordion.Toggle eventKey={props.eventKey}>
         {props.title}
       </Accordion.Toggle>
       <Accordion.Collapse eventKey={props.eventKey}>
-        <div className="FilterItem__tags">
+        <div className="filter-item__tags">
           {props.list.map((item) => (
             <FilterItemTag item={item} key={item} />
           ))}

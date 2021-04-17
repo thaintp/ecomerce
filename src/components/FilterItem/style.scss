@@ -1,6 +1,6 @@
 @import "styles/colors.scss";
 
-.FilterItem {
+.filter-item {
   button {
     text-align: left;
     outline: none;
@@ -14,8 +14,7 @@
       margin-bottom: 5px;
     }
   }
-
-  &__tags {
-    padding: 15px 0;
-  }
+}
+.filter-item__tags {
+  padding: 15px 0;
 }

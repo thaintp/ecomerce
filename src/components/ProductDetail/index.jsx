@@ -11,9 +11,9 @@ import {
 
 const ProductDetail = ({ product }) => {
   return (
-    <Container className="ProductDetail" fluid>
+    <Container className="product-detail" fluid>
       <Row>
-        <Col xs={1} className="ProductDetail__images">
+        <Col xs={1} className="product-detail__images">
           <ProductImages photos={product.photos} />
         </Col>
         <Col xs={4}>
@@ -24,7 +24,7 @@ const ProductDetail = ({ product }) => {
         <Col xs={6}>
           <ProductOptions product={product} />
         </Col>
-        <Col xs={1} className="ProductDetail__images">
+        <Col xs={1} className="product-detail__images">
           <BrandRecommendations brand={product.brand} />
         </Col>
       </Row>

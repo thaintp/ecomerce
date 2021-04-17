@@ -1,5 +1,5 @@
 const Slash = () => (
-  <div className="Slash" style={{ margin: "0 5px" }}>
+  <div className="slash" style={{ margin: "0 5px" }}>
     /
   </div>
 );

@@ -5,11 +5,11 @@ import classNames from "classnames";
 const SizePicker = ({ sizes }) => {
   const [state, setState] = useState("");
   return (
-    <div className="SizePicker">
+    <div className="size-picker">
       {sizes?.map((size) => (
         <button
-          className={classNames("SizePicker__button", {
-            "SizePicker__button--active": state === size,
+          className={classNames("size-picker__button", {
+            "size-picker__button--active": state === size,
           })}
           key={size}
           onClick={() => setState(size)}

@@ -5,11 +5,11 @@ import classNames from "classnames";
 const ColorPicker = (props) => {
   const [state, setState] = useState("");
   return (
-    <div className="ColorPicker">
+    <div className="color-picker">
       {props.colors?.map((color) => (
         <span
-          className={classNames("ColorPicker__item", {
-            "ColorPicker__item--active": state === color,
+          className={classNames("color-picker__item", {
+            "color-picker__item--active": state === color,
           })}
           style={{ backgroundColor: color }}
           key={color}

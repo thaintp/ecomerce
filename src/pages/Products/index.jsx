@@ -13,22 +13,22 @@ import {
 
 const Products = () => {
   return (
-    <div className="ProductsPage">
+    <div className="products-page">
       <ProductsBreadcrumb />
       <Container fluid>
         <Row>
-          <Col className="ProductsPage__sidebar" xs={2}>
+          <Col className="products-page__sidebar" xs={2}>
             <Category />
             <hr />
             <Filter />
           </Col>
-          <Col xs={10} className="ProductsPage__content">
+          <Col xs={10} className="products-page__content">
             <Container fluid>
-              <Row className="ProductsPage__content__title">
-                <div className="ProductsPage__sortBy">
+              <Row className="products-page__content__title">
+                <div className="products-page__sortBy">
                   <SortBy />
                 </div>
-                <div className="ProductsPage__pagination">
+                <div className="products-page__pagination">
                   <Pagination current={1} sum={100} />
                 </div>
               </Row>

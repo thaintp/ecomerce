@@ -1,36 +1,36 @@
 @import "styles/colors.scss";
 
-.BrandRecommendations__text {
+.brand-recommendations__text {
   font-size: 14px;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.57;
 }
 
-.BrandRecommendations__title {
+.brand-recommendations__title {
   font-weight: 500;
   letter-spacing: normal;
   color: $dark-grey;
 }
-.BrandRecommendations__shop {
+.brand-recommendations__shop {
   letter-spacing: -0.1px;
   color: $greyish-brown;
   margin-bottom: 20px;
 }
 
-.BrandRecommendations_images {
+.brand-recommendations_images {
   width: 100%;
   height: calc(100% + 25px);
   margin: -12.5px 0;
   display: flex;
   flex-direction: column;
 }
-.BrandRecommendations__imageContainer {
+.brand-recommendations__imageContainer {
   height: 25%;
   width: 100%;
   padding: 12.5px 0;
 }
-.BrandRecommendations__image {
+.brand-recommendations__image {
   width: 100%;
   height: 100%;
   object-fit: cover;

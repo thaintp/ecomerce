@@ -12,9 +12,9 @@ const Detail = () => {
     fetchProduct(id).then((data) => setProduct(data));
   }, [id]);
   return (
-    <div className="Detail">
+    <div className="detail">
       <ProductsBreadcrumb name={product.name} />
-      <ProductDetail className="Detail__product" product={product} />
+      <ProductDetail className="detail__product" product={product} />
     </div>
   );
 };

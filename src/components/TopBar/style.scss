@@ -1,47 +1,47 @@
 @import "styles/colors.scss";
 
-.TopBar {
+.top-bar {
   display: flex;
   margin-top: 20px;
+}
 
-  &__item {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    width: 100%;
-  }
+.top-bar__item {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
 
-  &__inputSearch {
-    height: 35px;
-    width: 181px;
-    padding: 5px 37px 5px 15px;
-    border-radius: 17px;
-    border: solid 1px $greyish-two;
-    outline: none;
-  }
+.top-bar__inputSearch {
+  height: 35px;
+  width: 181px;
+  padding: 5px 37px 5px 15px;
+  border-radius: 17px;
+  border: solid 1px $greyish-two;
+  outline: none;
+}
 
-  &__iconSearch {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    margin: 1px 0 0 145px;
-    padding: 2px;
-    object-fit: contain;
-    opacity: 0.6;
-    cursor: pointer;
-  }
+.top-bar__iconSearch {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin: 1px 0 0 145px;
+  padding: 2px;
+  object-fit: contain;
+  opacity: 0.6;
+  cursor: pointer;
+}
 
-  &__logo {
-    justify-content: center;
-  }
+.top-bar__logo {
+  justify-content: center;
+}
 
-  &__image {
-    cursor: pointer;
-    height: 20px;
-    padding: 0.3px 0.2px 0.4px 0.5px;
-  }
+.top-bar__image {
+  cursor: pointer;
+  height: 20px;
+  padding: 0.3px 0.2px 0.4px 0.5px;
+}
 
-  &__utils {
-    justify-content: flex-end;
-  }
+.top-bar__utils {
+  justify-content: flex-end;
 }
