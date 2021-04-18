@@ -40,4 +40,7 @@
   &:hover {
     background-color: $strawberry;
   }
+  &--disabled {
+    background-color: $brown-grey !important;
+  }
 }

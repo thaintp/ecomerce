@@ -4,8 +4,15 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { formatPrice } from "utils/number";
 import { Link } from "react-router-dom";
+import { QuantityChooser } from "components";
+import { useDispatch } from "react-redux";
+import { removeItem } from "actions/cart";
 
 const CartItem = ({ item }) => {
+  const dispatch = useDispatch();
+  const handleRemove = () => {
+    dispatch(removeItem(item._id));
+  };
   return (
     <div className="cart-item">
       <Container fluid className="h-100 p-0">
@@ -21,7 +28,11 @@ const CartItem = ({ item }) => {
                   Change
                 </Link>
                 <div className="product__actions__link">|</div>
-                <Link className="product__actions__link" to="#">
+                <Link
+                  className="product__actions__link"
+                  to="#"
+                  onClick={() => handleRemove()}
+                >
                   Remove
                 </Link>
               </div>
@@ -37,7 +48,12 @@ const CartItem = ({ item }) => {
             {item.size}
           </Col>
           <Col className="cart-item__col p-0" xs={2}>
-            {item.quantity}
+            <QuantityChooser
+              className="product-options__quantity-chooser__item"
+              quantity={item.product.quantity}
+              item={item}
+              setItem={() => {}}
+            />
           </Col>
           <Col className="cart-item__col cart-item__col--left p-0" xs={2}>
             {formatPrice(item.total)}

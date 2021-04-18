@@ -1,5 +1,6 @@
 import {
   ADD_ITEM,
+  REMOVE_ITEM,
   GET_CART_DETAIL,
   ADD_ITEM_ERROR,
   ORDER,
@@ -16,6 +17,8 @@ const cartReducer = (state = initialState, action) => {
     case ORDER:
       return {};
     case ADD_ITEM:
+      return payload;
+    case REMOVE_ITEM:
       return payload;
     case ADD_ITEM_ERROR:
       return state;

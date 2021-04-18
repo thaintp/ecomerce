@@ -2,6 +2,7 @@ import "./style.scss";
 import { formatPrice } from "utils/number";
 import { useDispatch, useSelector } from "react-redux";
 import { order } from "actions/cart";
+import classNames from "classnames";
 
 const CheckOut = ({ total }) => {
   const dispatch = useDispatch();
@@ -31,7 +32,11 @@ const CheckOut = ({ total }) => {
         </div>
       </div>
       <button
-        className="check-out__button check-out__subtotal"
+        className={classNames("check-out__button", "check-out__subtotal", {
+          "check-out__button--disabled": cart.items
+            ? cart.items.length === 0
+            : true,
+        })}
         onClick={() => handleCheckout()}
         disabled={cart.items ? cart.items.length === 0 : true}
       >

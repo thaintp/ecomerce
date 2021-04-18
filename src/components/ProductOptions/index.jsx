@@ -2,7 +2,7 @@ import "./style.scss";
 import { formatPrice } from "utils/number";
 import { RaterBar, SizePicker, ColorPicker, QuantityChooser } from "components";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "actions/cart";
 import classNames from "classnames";
 
@@ -16,6 +16,7 @@ const ProductOptions = ({ product }) => {
   const addToCart = () => {
     dispatch(addItem({ ...item, product: product._id }));
   };
+  const { account: currentAccount } = useSelector((state) => state.auth);
   return (
     product && (
       <div className="product-options">
@@ -55,10 +56,16 @@ const ProductOptions = ({ product }) => {
           <button
             className={classNames("product-options__addToCart__button", {
               "product-options__addToCart__button--disabled":
-                item.color.length === 0 || item.size.length === 0,
+                item.color.length === 0 ||
+                item.size.length === 0 ||
+                currentAccount === null,
             })}
             onClick={() => addToCart()}
-            disabled={item.color.length === 0 || item.size.length === 0}
+            disabled={
+              item.color.length === 0 ||
+              item.size.length === 0 ||
+              currentAccount === null
+            }
           >
             <span className="product-options__addToCart__text">
               Add to cart

@@ -42,6 +42,20 @@ class CartService {
         throw err;
       });
   }
+  async removeItem(item) {
+    return await axios({
+      method: "DELETE",
+      url: API_URL + "/removeItem",
+      data: { item },
+      headers: authHeader(),
+    })
+      .then((response) => {
+        return response.data;
+      })
+      .catch((err) => {
+        throw err;
+      });
+  }
 }
 
 export default new CartService();
