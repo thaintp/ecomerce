@@ -9,7 +9,7 @@ const orderReducer = (state = initialState, action) => {
     case GET_CART_DETAIL:
       return payload;
     case ADD_ITEM:
-      return [...state, payload];
+      return payload;
     case ADD_ITEM_ERROR:
       return state;
     default:

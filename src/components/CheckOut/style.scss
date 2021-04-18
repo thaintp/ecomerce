@@ -1,0 +1,43 @@
+@import "styles/colors.scss";
+
+.check-out__frame {
+  width: 100%;
+  height: 150;
+  margin: 10px 0 13px;
+  padding: 32px 28px 22px 30px;
+  background-color: $white-seven;
+}
+
+.check-out__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.check-out__col {
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: $dark-grey;
+}
+
+.check-out__subtotal {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.check-out__button {
+  background-color: $strawberry-2;
+  border: none;
+  outline: none;
+  box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.12);
+  height: 50px;
+  width: 100%;
+  color: $white;
+  &:hover {
+    background-color: $strawberry;
+  }
+}

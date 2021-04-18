@@ -1,6 +1,6 @@
 import { Router, Switch, Route } from "react-router-dom";
 import { TopBar, NavBar, Footer } from "components";
-import { Home, Products, Detail, Seller } from "pages";
+import { Home, Products, Detail, Seller, Cart } from "pages";
 import "style.scss";
 
 import { clearMessage } from "./actions/message";
@@ -48,6 +48,9 @@ function App() {
           </Route>
           <Route path="/seller">
             <Seller />
+          </Route>
+          <Route path="/cart">
+            <Cart />
           </Route>
         </Switch>
 

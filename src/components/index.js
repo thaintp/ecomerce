@@ -30,3 +30,6 @@ export { default as LoginModal } from "./LoginModal";
 export { default as Account } from "./Account";
 export { default as Error } from "./Error";
 export { default as CartWrapper } from "./CartWrapper";
+export { default as CartItem } from "./CartItem";
+export { default as CartItems } from "./CartItems";
+export { default as CheckOut } from "./CheckOut";

@@ -1,0 +1,56 @@
+@import "styles/colors.scss";
+
+.cart-item {
+  width: 100%;
+  height: 140px;
+  padding: 5px 0;
+}
+.cart-item__col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.cart-item__col--left {
+  justify-content: flex-end;
+}
+
+.cart-item__product {
+  display: flex;
+  flex-direction: row;
+  padding: 0 !important;
+}
+
+.cart-item__product__image {
+  width: 80px;
+  height: 100%;
+}
+
+.cart-item__product__image img {
+  width: 80px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-item__product__actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+.product__actions__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.product__actions__link {
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.83;
+  letter-spacing: normal;
+  color: $dark-grey;
+}
