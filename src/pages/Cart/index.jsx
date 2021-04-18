@@ -6,8 +6,7 @@ import { CartItems, CheckOut } from "components";
 import { useSelector } from "react-redux";
 
 const Cart = () => {
-  const order = useSelector((state) => state.order);
-  console.log(order);
+  const cart = useSelector((state) => state.cart);
   return (
     <div className="cart">
       <div className="cart__subtitle cart__title">My Bag</div>
@@ -40,10 +39,10 @@ const Cart = () => {
         </Row>
         <Row>
           <Col xs={8} className="pl-0">
-            <CartItems items={order.items} />
+            <CartItems items={cart.items} />
           </Col>
           <Col xs={4} className="pr-0">
-            <CheckOut total={order.total} />
+            <CheckOut total={cart.total} />
           </Col>
         </Row>
       </Container>

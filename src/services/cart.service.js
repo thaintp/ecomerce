@@ -5,16 +5,32 @@ const API_URL = "http://localhost:7070/api/order";
 
 class CartService {
   async getCartDetail() {
-    return await axios
-      .get(API_URL + "/detail", { headers: authHeader() })
+    return await axios({
+      method: "GET",
+      url: API_URL + "/detail",
+      data: { method: "get" },
+      headers: authHeader(),
+    })
       .then((response) => {
         return response.data;
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {});
+  }
+  async order() {
+    return await axios({
+      method: "POST",
+      url: API_URL,
+      data: { method: "post" },
+      headers: authHeader(),
+    })
+      .then((response) => {
+        return response.data;
+      })
+      .catch((err) => {});
   }
   async addItem(item) {
     return await axios({
-      method: "POST", //you can set what request you want to be
+      method: "POST",
       url: API_URL + "/addItem",
       data: { item },
       headers: authHeader(),

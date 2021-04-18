@@ -45,12 +45,23 @@ export const register = (name, email, password) => (dispatch) => {
   );
 };
 
+export const update = () => (dispatch) => {
+  return AuthService.update()
+    .then((data) => {
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: { account: data },
+      });
+    })
+    .catch((err) => {});
+};
+
 export const login = (email, password) => (dispatch) => {
   return AuthService.login(email, password).then(
     (data) => {
       dispatch({
         type: LOGIN_SUCCESS,
-        payload: { user: data },
+        payload: { account: data },
       });
 
       return Promise.resolve();

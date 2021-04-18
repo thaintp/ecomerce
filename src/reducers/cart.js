@@ -1,13 +1,20 @@
-import { ADD_ITEM, GET_CART_DETAIL, ADD_ITEM_ERROR } from "actions/types";
+import {
+  ADD_ITEM,
+  GET_CART_DETAIL,
+  ADD_ITEM_ERROR,
+  ORDER,
+} from "actions/types";
 
-const initialState = [];
+const initialState = {};
 
-const orderReducer = (state = initialState, action) => {
+const cartReducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
     case GET_CART_DETAIL:
-      return payload;
+      return payload ?? {};
+    case ORDER:
+      return {};
     case ADD_ITEM:
       return payload;
     case ADD_ITEM_ERROR:
@@ -17,4 +24,4 @@ const orderReducer = (state = initialState, action) => {
   }
 };
 
-export default orderReducer;
+export default cartReducer;
