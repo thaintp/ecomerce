@@ -1,23 +1,31 @@
 import "./style.scss";
-import { useState } from "react";
 
-const QuantityChooser = (props) => {
-  const [quantity, setQuantity] = useState(0);
-
+const QuantityChooser = ({ quantity, item, setItem }) => {
   return (
     <div className="quantity-chooser">
       <img
         className="quantity-chooser__button"
         src="/images/minus.svg"
         alt="minus"
-        onClick={() => setQuantity((old) => (old > 0 ? old - 1 : old))}
+        onClick={() =>
+          setItem({
+            ...item,
+            quantity: item.quantity > 1 ? item.quantity - 1 : item.quantity,
+          })
+        }
       />
-      <div className="quantity-chooser__number">{quantity}</div>
+      <div className="quantity-chooser__number">{item.quantity}</div>
       <img
         className="quantity-chooser__button"
         src="/images/plus.svg"
         alt="plus"
-        onClick={() => setQuantity((old) => old + 1)}
+        onClick={() =>
+          setItem({
+            ...item,
+            quantity:
+              item.quantity < quantity ? item.quantity + 1 : item.quantity,
+          })
+        }
       />
     </div>
   );

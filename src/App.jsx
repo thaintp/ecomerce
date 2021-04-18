@@ -4,6 +4,7 @@ import { Home, Products, Detail, Seller } from "pages";
 import "style.scss";
 
 import { clearMessage } from "./actions/message";
+import { getCartDetail } from "actions/cart";
 import { history } from "./helpers/history";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,8 +24,9 @@ function App() {
   useEffect(() => {
     if (currentAccount) {
       setShowSellerBoard(currentAccount.roles.includes("seller"));
+      dispatch(getCartDetail());
     }
-  }, [currentAccount]);
+  }, [currentAccount, dispatch]);
 
   return (
     <Router history={history}>

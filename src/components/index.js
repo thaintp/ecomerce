@@ -29,3 +29,4 @@ export { default as RegisterModal } from "./RegisterModal";
 export { default as LoginModal } from "./LoginModal";
 export { default as Account } from "./Account";
 export { default as Error } from "./Error";
+export { default as CartWrapper } from "./CartWrapper";

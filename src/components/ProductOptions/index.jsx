@@ -1,8 +1,21 @@
 import "./style.scss";
 import { formatPrice } from "utils/number";
 import { RaterBar, SizePicker, ColorPicker, QuantityChooser } from "components";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "actions/cart";
+import classNames from "classnames";
 
 const ProductOptions = ({ product }) => {
+  const [item, setItem] = useState({
+    size: "",
+    color: "",
+    quantity: 1,
+  });
+  const dispatch = useDispatch();
+  const addToCart = () => {
+    dispatch(addItem({ ...item, product: product._id }));
+  };
   return (
     product && (
       <div className="product-options">
@@ -19,22 +32,34 @@ const ProductOptions = ({ product }) => {
           Size
         </div>
         <div className="product-options__sizePicker">
-          <SizePicker sizes={product.sizes} />
+          <SizePicker sizes={product.sizes} item={item} setItem={setItem} />
         </div>
         <div className="product-options__text product-options__subText">
           Color
         </div>
         <div className="product-options__color-picker">
-          <ColorPicker colors={product.colors} />
+          <ColorPicker colors={product.colors} item={item} setItem={setItem} />
         </div>
         <div className="product-options__quantity-chooser">
           <div className="product-options__text product-options__subText product-options__quantity">
             Quantity
           </div>
-          <QuantityChooser className="product-options__quantity-chooser__item" />
+          <QuantityChooser
+            className="product-options__quantity-chooser__item"
+            quantity={product.quantity}
+            item={item}
+            setItem={setItem}
+          />
         </div>
         <div className="product-options__addToCart">
-          <button className="product-options__addToCart__button">
+          <button
+            className={classNames("product-options__addToCart__button", {
+              "product-options__addToCart__button--disabled":
+                item.color.length === 0 || item.size.length === 0,
+            })}
+            onClick={() => addToCart()}
+            disabled={item.color.length === 0 || item.size.length === 0}
+          >
             <span className="product-options__addToCart__text">
               Add to cart
             </span>

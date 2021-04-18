@@ -1,0 +1,27 @@
+@import "styles/colors.scss";
+
+.cart-wrapper {
+  position: relative;
+}
+
+.cart-wrapper__quantity {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: $orange-1 none repeat scroll 0% 0%;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  color: $white;
+  left: 12px;
+  top: -5px;
+  display: inline-block;
+  text-align: center;
+  padding: 0px auto;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.83;
+  letter-spacing: normal;
+}

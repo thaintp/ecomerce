@@ -1,5 +1,5 @@
 import "./style.scss";
-import { AuthButtons } from "components";
+import { AuthButtons, CartWrapper } from "components";
 import { Link } from "react-router-dom";
 
 const TopBar = () => {
@@ -27,7 +27,7 @@ const TopBar = () => {
 
       <div className="top-bar__item top-bar__utils">
         <AuthButtons />
-        <img src="/images/cart.svg" className="top-bar__cart" alt="cart" />
+        <CartWrapper />
       </div>
     </div>
   );

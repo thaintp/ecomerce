@@ -1,18 +1,16 @@
 import "./style.scss";
-import { useState } from "react";
 import classNames from "classnames";
 
-const SizePicker = ({ sizes }) => {
-  const [state, setState] = useState("");
+const SizePicker = ({ sizes, item, setItem }) => {
   return (
     <div className="size-picker">
       {sizes?.map((size) => (
         <button
           className={classNames("size-picker__button", {
-            "size-picker__button--active": state === size,
+            "size-picker__button--active": item.size === size,
           })}
           key={size}
-          onClick={() => setState(size)}
+          onClick={() => setItem({ ...item, size: size })}
         >
           {size}
         </button>

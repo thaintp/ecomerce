@@ -107,7 +107,7 @@ const LoginModal = ({ modal, setModal }) => {
                 disabled={state.loading}
               >
                 {state.loading && (
-                  <span className="spinner-border spinner-border-sm"></span>
+                  <span className="spinner-border spinner-border-sm mr-2"></span>
                 )}
                 <span>Login</span>
               </button>

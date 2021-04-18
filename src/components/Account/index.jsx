@@ -18,6 +18,7 @@ const Account = ({ account }) => {
             dispatch(logout());
             window.location.reload();
           }}
+          to="#"
         >
           Log out
         </Link>
