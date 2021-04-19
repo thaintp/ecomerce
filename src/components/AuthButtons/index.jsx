@@ -9,7 +9,7 @@ const AuthButtons = () => {
   return (
     <div className="auth-buttons">
       {account ? (
-        <Account account={account} />
+        <Account account={account} setModal={setModal} />
       ) : (
         <>
           <LoginModal modal={modal} setModal={setModal} />

@@ -13,3 +13,7 @@ export const ADD_ITEM = "ADD_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
 export const ADD_ITEM_ERROR = "ADD_ITEM_ERROR";
 export const ORDER = "ORDER";
+
+export const MARK_AS_COMPLETED = "MARK_AS_COMPLETED";
+export const MARK_AS_CANCELED = "MARK_AS_CANCELED";
+export const INIT_ORDERS = "INIT_ORDERS";

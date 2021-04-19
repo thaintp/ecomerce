@@ -5,6 +5,7 @@ import {
   LOGIN_FAIL,
   LOGOUT,
   SET_MESSAGE,
+  GET_CART_DETAIL,
 } from "./types";
 
 import AuthService from "../services/auth.service";
@@ -93,5 +94,9 @@ export const logout = () => (dispatch) => {
 
   dispatch({
     type: LOGOUT,
+  });
+  dispatch({
+    type: GET_CART_DETAIL,
+    payload: {},
   });
 };

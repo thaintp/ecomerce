@@ -1,0 +1,33 @@
+@import "styles/colors.scss";
+
+.sidebar-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 48px;
+  width: 100%;
+  padding: 0 20px;
+  border: solid $white-two;
+  border-width: 0 0 0 6px;
+}
+
+.sidebar-item__icon {
+  margin-right: 20px;
+}
+
+.sidebar-item__title {
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: $charcoal-grey;
+}
+
+.sidebar-item--active {
+  border-color: $orange-1;
+}
+.sidebar-item--active .sidebar-item__title {
+  color: $orange-1;
+}

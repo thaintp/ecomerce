@@ -39,9 +39,7 @@ const LoginModal = ({ modal, setModal }) => {
     setState({ ...state, loading: true });
 
     dispatch(login(state.email, state.password))
-      .then(() => {
-        window.location.reload();
-      })
+      .then(() => {})
       .catch((err) => {
         setState({ ...state, loading: false });
       });

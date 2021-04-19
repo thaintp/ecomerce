@@ -3,11 +3,19 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "actions/auth";
 
-const Account = ({ account }) => {
+const Account = ({ account, setModal, size }) => {
   const dispatch = useDispatch();
   return (
     <div className="account">
-      <img src={account.avatar} alt="avatar" className="account__avatar" />
+      <img
+        src={account?.avatar}
+        alt="avatar"
+        className="account__avatar"
+        style={{
+          width: size ?? "28px",
+          height: size ?? "28px",
+        }}
+      />
       <div className="account__dropdown">
         <Link className="account__action" to="/profile">
           Account settings
@@ -16,7 +24,7 @@ const Account = ({ account }) => {
           className="account__action"
           onClick={() => {
             dispatch(logout());
-            window.location.reload();
+            setModal && setModal(0);
           }}
           to="#"
         >
