@@ -1,0 +1,33 @@
+@import "styles/colors.scss";
+
+.seller-product-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.seller-product-detail__image {
+  width: 30px;
+  height: 40px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.seller-product-detail__info {
+  margin-left: 16px;
+}
+.seller-product-detail__text {
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: $charcoal-grey;
+}
+.seller-product-detail__category {
+  font-size: 12px;
+  line-height: 1.83;
+  color: $greyish;
+}

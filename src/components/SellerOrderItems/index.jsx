@@ -1,3 +1,4 @@
+import "./style.scss";
 import Table from "react-bootstrap/Table";
 import { SellerOrderItem } from "components";
 import { useEffect } from "react";
@@ -16,12 +17,12 @@ const SellerOrderItems = () => {
       <Table striped borderless hover>
         <thead>
           <tr>
-            <th>ORDER ID</th>
-            <th>ORDER DATE</th>
-            <th>DETAIL</th>
-            <th>TOTAL ($)</th>
-            <th>STATUS</th>
-            <th></th>
+            <th className="seller-order-items__title">ORDER ID</th>
+            <th className="seller-order-items__title">ORDER DATE</th>
+            <th className="seller-order-items__title">ACCOUNT</th>
+            <th className="seller-order-items__title">TOTAL ($)</th>
+            <th className="seller-order-items__title">STATUS</th>
+            <th className="seller-order-items__title"></th>
           </tr>
         </thead>
         <tbody>

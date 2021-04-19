@@ -1,13 +1,15 @@
 import "./styles.scss";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { ProductItem } from "components";
-import { fetchProducts } from "api/product";
+import { initProducts } from "actions/product";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductsList = () => {
-  const [products, setProducts] = useState([]);
+  const products = useSelector((state) => state.products);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchProducts().then((products) => setProducts(products));
+    if (products.length === 0) dispatch(initProducts());
   }, []);
 
   return (

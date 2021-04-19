@@ -17,3 +17,6 @@ export const ORDER = "ORDER";
 export const MARK_AS_COMPLETED = "MARK_AS_COMPLETED";
 export const MARK_AS_CANCELED = "MARK_AS_CANCELED";
 export const INIT_ORDERS = "INIT_ORDERS";
+
+export const INIT_PRODUCTS = "INIT_PRODUCTS";
+export const REMOVE_PRODUCT = "REMOVE_PRODUCTS";

@@ -39,4 +39,7 @@ export { default as SellerSidebar } from "./SellerSidebar";
 export { default as SidebarItem } from "./SidebarItem";
 export { default as SellerOrderItem } from "./SellerOrderItem";
 export { default as SellerOrderItems } from "./SellerOrderItems";
+export { default as SellerProductItem } from "./SellerProductItem";
+export { default as SellerProductItems } from "./SellerProductItems";
+export { default as SellerProductDetail } from "./SellerProductDetail";
 export { default as Status } from "./Status";

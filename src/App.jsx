@@ -6,7 +6,15 @@ import {
   SellerTopBar,
   SellerSidebar,
 } from "components";
-import { Home, Products, Detail, Seller, Cart, SellerOrders } from "pages";
+import {
+  Home,
+  Products,
+  Detail,
+  Seller,
+  Cart,
+  SellerOrders,
+  SellerProducts,
+} from "pages";
 import "style.scss";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -65,8 +73,11 @@ function App() {
                   <Route exact path="/seller/overview">
                     <Seller />
                   </Route>
-                  <Route exact path="/seller/orders">
+                  <Route path="/seller/orders">
                     <SellerOrders />
+                  </Route>
+                  <Route path="/seller/products">
+                    <SellerProducts />
                   </Route>
                   <Route path="/seller/:category">
                     <Seller />
