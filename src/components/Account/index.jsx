@@ -2,8 +2,9 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "actions/auth";
+import { closeAllModal } from "actions/modal";
 
-const Account = ({ account, setModal, size }) => {
+const Account = ({ account, size }) => {
   const dispatch = useDispatch();
   return (
     <div className="account">
@@ -24,7 +25,7 @@ const Account = ({ account, setModal, size }) => {
           className="account__action"
           onClick={() => {
             dispatch(logout());
-            setModal && setModal(0);
+            dispatch(closeAllModal());
           }}
           to="#"
         >

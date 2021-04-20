@@ -10,8 +10,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "actions/auth";
 import { clearMessage } from "actions/message";
 import { Error } from "components";
+import { closeSigninModal, openSignupModal } from "actions/modal";
 
-const LoginModal = ({ modal, setModal }) => {
+const LoginModal = () => {
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -21,10 +22,11 @@ const LoginModal = ({ modal, setModal }) => {
   const checkBtn = useRef();
   const dispatch = useDispatch();
 
+  const { signin } = useSelector((state) => state.modal);
   const { message } = useSelector((state) => state.message);
   useEffect(() => {
     dispatch(clearMessage());
-  }, [modal, dispatch]);
+  }, [dispatch]);
 
   const onChangeEmail = (e) => {
     setState({ ...state, email: e.target.value });
@@ -48,8 +50,8 @@ const LoginModal = ({ modal, setModal }) => {
   return (
     <>
       <Modal
-        show={modal === 1}
-        onHide={() => setModal(0)}
+        show={signin.visible}
+        onHide={() => dispatch(closeSigninModal())}
         animation={false}
         className="login-modal"
       >
@@ -117,7 +119,13 @@ const LoginModal = ({ modal, setModal }) => {
           <span className="login-modal__footer__text">
             Don't have an account?{" "}
           </span>
-          <span className="login-modal__link" onClick={() => setModal(2)}>
+          <span
+            className="login-modal__link"
+            onClick={() => {
+              dispatch(closeSigninModal());
+              dispatch(openSignupModal());
+            }}
+          >
             Register
           </span>
         </Modal.Footer>

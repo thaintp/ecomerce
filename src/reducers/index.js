@@ -4,6 +4,7 @@ import message from "./message";
 import cart from "./cart";
 import orders from "./order";
 import products from "./product";
+import modal from "./modal";
 
 export default combineReducers({
   auth,
@@ -11,4 +12,5 @@ export default combineReducers({
   cart,
   orders,
   products,
+  modal,
 });

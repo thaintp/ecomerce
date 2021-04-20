@@ -8,8 +8,9 @@ import Input from "react-validation/build/input";
 import { register } from "actions/auth";
 import { clearMessage } from "actions/message";
 import { Error } from "components";
+import { closeSignupModal, openSigninModal } from "actions/modal";
 
-const RegisterModal = ({ modal, setModal }) => {
+const RegisterModal = () => {
   const form = useRef();
   const [state, setState] = useState({
     name: "",
@@ -19,10 +20,11 @@ const RegisterModal = ({ modal, setModal }) => {
   });
 
   const { message } = useSelector((state) => state.message);
+  const { signup } = useSelector((state) => state.modal);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(clearMessage());
-  }, [modal, dispatch]);
+  }, [dispatch]);
 
   const onChangeName = (e) => {
     setState({ ...state, name: e.target.value });
@@ -50,8 +52,8 @@ const RegisterModal = ({ modal, setModal }) => {
   return (
     <>
       <Modal
-        show={modal === 2}
-        onHide={() => setModal(0)}
+        show={signup.visible}
+        onHide={() => dispatch(closeSignupModal())}
         animation={false}
         className="register-modal"
       >
@@ -116,7 +118,13 @@ const RegisterModal = ({ modal, setModal }) => {
         </Modal.Body>
         <Modal.Footer className="register-modal__footer">
           Do you have an account?{" "}
-          <span className="register-modal__link" onClick={() => setModal(1)}>
+          <span
+            className="register-modal__link"
+            onClick={() => {
+              dispatch(closeSignupModal());
+              dispatch(openSigninModal());
+            }}
+          >
             Log In
           </span>
         </Modal.Footer>

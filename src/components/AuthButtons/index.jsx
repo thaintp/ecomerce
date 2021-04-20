@@ -1,28 +1,30 @@
 import "./style.scss";
 import { RegisterModal, LoginModal, Account } from "components";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { openSigninModal, openSignupModal } from "actions/modal";
 
 const AuthButtons = () => {
   const { account } = useSelector((state) => state.auth);
-  const [modal, setModal] = useState(0);
+  const dispatch = useDispatch();
+
   return (
     <div className="auth-buttons">
       {account ? (
-        <Account account={account} setModal={setModal} />
+        <Account account={account} />
       ) : (
         <>
-          <LoginModal modal={modal} setModal={setModal} />
-          <RegisterModal modal={modal} setModal={setModal} />
+          <LoginModal />
+          <RegisterModal />
           <button
             className="auth-buttons__registerBtn auth-buttons__text"
-            onClick={() => setModal(2)}
+            onClick={() => dispatch(openSignupModal())}
           >
             Register
           </button>
           <button
             className="auth-buttons__loginBtn"
-            onClick={() => setModal(1)}
+            onClick={() => dispatch(openSigninModal())}
           >
             <span className="auth-buttons__loginBtn__text auth-buttons__text">
               Log In
