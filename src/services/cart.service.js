@@ -1,15 +1,10 @@
-import axios from "axios";
-import authHeader from "./auth-header";
-
-const API_URL = "http://localhost:7070/api/order";
+import axios from "utils/axios";
 
 class CartService {
   async getCartDetail() {
     return await axios({
       method: "GET",
-      url: API_URL + "/detail",
-      data: { method: "get" },
-      headers: authHeader(),
+      url: "/order/detail",
     })
       .then((response) => {
         return response.data;
@@ -19,9 +14,8 @@ class CartService {
   async order() {
     return await axios({
       method: "POST",
-      url: API_URL,
+      url: "/order",
       data: { method: "post" },
-      headers: authHeader(),
     })
       .then((response) => {
         return response.data;
@@ -31,9 +25,8 @@ class CartService {
   async addItem(item) {
     return await axios({
       method: "POST",
-      url: API_URL + "/addItem",
+      url: "/order/addItem",
       data: { item },
-      headers: authHeader(),
     })
       .then((response) => {
         return response.data;
@@ -45,9 +38,8 @@ class CartService {
   async removeItem(item) {
     return await axios({
       method: "DELETE",
-      url: API_URL + "/removeItem",
+      url: "/order/removeItem",
       data: { item },
-      headers: authHeader(),
     })
       .then((response) => {
         return response.data;

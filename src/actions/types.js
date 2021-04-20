@@ -9,6 +9,7 @@ export const SET_MESSAGE = "SET_MESSAGE";
 export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
 
 export const GET_CART_DETAIL = "GET_CART_DETAIL";
+export const GET_PRODUCT = "GET_PRODUCT";
 export const ADD_ITEM = "ADD_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
 export const ADD_ITEM_ERROR = "ADD_ITEM_ERROR";

@@ -43,3 +43,5 @@ export { default as SellerProductItem } from "./SellerProductItem";
 export { default as SellerProductItems } from "./SellerProductItems";
 export { default as SellerProductDetail } from "./SellerProductDetail";
 export { default as Status } from "./Status";
+export { default as SellerProductsTopbar } from "./SellerProductsTopbar";
+export { default as ImageUpload } from "./ImageUpload";

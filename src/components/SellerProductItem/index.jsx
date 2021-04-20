@@ -11,9 +11,11 @@ const SellerProductItem = ({ product }) => {
       <td>
         <SellerProductDetail product={product} />
       </td>
-      <td>{product.quantity}</td>
+      <td>
+        {product.sold} / {product.quantity}
+      </td>
       <td>{new Date(product.date).toString().substring(0, 15)}</td>
-      <td>{product.price}</td>
+      <td>{product.profit.toFixed(2)}</td>
       <td>
         <Dropdown>
           <Dropdown.Toggle variant="" id="dropdown-basic">

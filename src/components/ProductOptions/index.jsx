@@ -47,7 +47,7 @@ const ProductOptions = ({ product }) => {
           </div>
           <QuantityChooser
             className="product-options__quantity-chooser__item"
-            quantity={product.quantity}
+            quantity={product.quantity - product.sold}
             item={item}
             setItem={setItem}
           />

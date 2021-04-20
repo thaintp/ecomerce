@@ -1,18 +1,24 @@
-import axios from "axios";
-import authHeader from "./auth-header";
-
-const API_URL = "http://localhost:8080/api/test/";
+import axios from "utils/axios";
 
 const getPublicContent = () => {
-  return axios.get(API_URL + "all");
+  return axios({
+    method: "GET",
+    url: "/test/all",
+  });
 };
 
 const getUserBoard = () => {
-  return axios.get(API_URL + "user", { headers: authHeader() });
+  return axios({
+    method: "GET",
+    url: "/test/user",
+  });
 };
 
 const getSellerBoard = () => {
-  return axios.get(API_URL + "seller", { headers: authHeader() });
+  return axios({
+    method: "GET",
+    url: "/test/seller",
+  });
 };
 
 export default {

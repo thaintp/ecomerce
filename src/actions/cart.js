@@ -7,6 +7,7 @@ import {
 } from "./types";
 import CartService from "services/cart.service";
 import { update } from "actions/auth";
+import { getProduct } from "./product";
 
 export const order = () => (dispatch) => {
   return CartService.order()
@@ -38,6 +39,7 @@ export const addItem = (item) => (dispatch) => {
         type: ADD_ITEM,
         payload: cart,
       });
+      dispatch(getProduct(item.product));
     })
     .catch((err) => {
       alert("Add item error");

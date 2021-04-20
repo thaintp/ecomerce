@@ -1,19 +1,18 @@
-import axios from "axios";
-import authHeader from "./auth-header";
-
-const API_URL = "http://localhost:7070/api/auth/";
+import axios from "utils/axios";
 
 class AuthService {
   async login(email, password) {
-    return await axios
-      .post(API_URL + "signin", { email, password })
-      .then((response) => {
-        if (response.data.accessToken) {
-          localStorage.setItem("account", JSON.stringify(response.data));
-        }
+    return await axios({
+      method: "POST",
+      url: "/auth/signin",
+      data: { email, password },
+    }).then((response) => {
+      if (response.data.accessToken) {
+        localStorage.setItem("account", JSON.stringify(response.data));
+      }
 
-        return response.data;
-      });
+      return response.data;
+    });
   }
 
   logout() {
@@ -23,9 +22,8 @@ class AuthService {
   async update() {
     return await axios({
       method: "POST",
-      url: API_URL + "update",
+      url: "/auth/update",
       data: { method: "post" },
-      headers: authHeader(),
     }).then((response) => {
       if (response.data.accessToken) {
         localStorage.setItem("account", JSON.stringify(response.data));
@@ -35,10 +33,10 @@ class AuthService {
   }
 
   async register(name, email, password) {
-    return await axios.post(API_URL + "signup", {
-      name,
-      email,
-      password,
+    return await axios({
+      method: "POST",
+      url: "/auth/signup",
+      data: { name, email, password },
     });
   }
 }

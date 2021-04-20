@@ -16,7 +16,7 @@ const BrandRecommendations = ({ brand }) => {
       <div className="brand-recommendations__text brand-recommendations__shop">
         {brand}
       </div>
-      <div className="brand-recommendations_images">
+      <div className="brand-recommendations__images">
         {products.map((product) => (
           <div className="brand-recommendations__image-container" key={product}>
             <img

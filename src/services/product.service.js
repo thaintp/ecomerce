@@ -1,20 +1,26 @@
-import axios from "axios";
-import authHeader from "./auth-header";
-
-const API_URL = "http://localhost:7070/api/products/";
+import axios from "utils/axios";
 
 class ProductService {
   async initProducts() {
-    const data = await axios.get(API_URL);
+    const data = await axios({
+      method: "GET",
+      url: "/products",
+    });
     return data.data;
   }
   async removeProduct(id) {
     await axios({
       method: "DELETE",
-      url: API_URL + id,
+      url: `/products/${id}`,
       data: { method: "DELETE" },
-      headers: authHeader(),
     });
+  }
+  async getProduct(id) {
+    const data = await axios({
+      method: "GET",
+      url: `/products/${id}`,
+    });
+    return data.data;
   }
 }
 

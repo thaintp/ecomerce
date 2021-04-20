@@ -2,11 +2,10 @@
 
 .shop-now-button {
   box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.12);
-  background-color: $orange-1 !important;
   border: none !important;
   outline: none !important;
   &:hover {
-    background-color: $orange-2 !important;
+    background-color: $orange-3 !important;
   }
 }
 a.shop-now-button {

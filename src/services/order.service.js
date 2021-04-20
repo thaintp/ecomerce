@@ -1,24 +1,21 @@
-import axios from "axios";
-import authHeader from "./auth-header";
-
-const API_URL = "http://localhost:7070/api/order";
+import axios from "utils/axios";
 
 class OrderService {
   async initOrders() {
-    const data = await axios.get(API_URL, {
-      headers: authHeader(),
+    const data = await axios({
+      method: "GET",
+      url: "/order",
     });
     return data.data;
   }
   async markAsCompleted(id) {
     return await axios({
       method: "POST",
-      url: API_URL + "/update",
+      url: "/order/update",
       data: {
         id,
         state: "Completed",
       },
-      headers: authHeader(),
     })
       .then((response) => {
         return response.data;
@@ -30,12 +27,11 @@ class OrderService {
   async markAsCanceled(id) {
     return await axios({
       method: "POST",
-      url: API_URL + "/update",
+      url: "/order/update",
       data: {
         id,
         state: "Canceled",
       },
-      headers: authHeader(),
     })
       .then((response) => {
         return response.data;

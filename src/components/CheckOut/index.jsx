@@ -8,7 +8,6 @@ const CheckOut = ({ total }) => {
   const dispatch = useDispatch();
   const handleCheckout = () => {
     dispatch(order());
-    // window.location.reload();
   };
   const cart = useSelector((state) => state.cart);
 

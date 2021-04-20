@@ -14,6 +14,7 @@ import {
   Cart,
   SellerOrders,
   SellerProducts,
+  PostProduct,
 } from "pages";
 import "style.scss";
 import Container from "react-bootstrap/Container";
@@ -73,10 +74,13 @@ function App() {
                   <Route exact path="/seller/overview">
                     <Seller />
                   </Route>
-                  <Route path="/seller/orders">
+                  <Route exact path="/seller/orders">
                     <SellerOrders />
                   </Route>
-                  <Route path="/seller/products">
+                  <Route exact path="/seller/products/add">
+                    <PostProduct />
+                  </Route>
+                  <Route exact path="/seller/products">
                     <SellerProducts />
                   </Route>
                   <Route path="/seller/:category">

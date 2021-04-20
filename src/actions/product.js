@@ -1,4 +1,4 @@
-import { INIT_PRODUCTS, REMOVE_PRODUCT } from "actions/types";
+import { GET_PRODUCT, INIT_PRODUCTS, REMOVE_PRODUCT } from "actions/types";
 import ProductService from "services/product.service";
 
 export const initProducts = () => (dispatch) => {
@@ -7,6 +7,16 @@ export const initProducts = () => (dispatch) => {
       dispatch({
         type: INIT_PRODUCTS,
         payload: products,
+      });
+    })
+    .catch((err) => {});
+};
+export const getProduct = (id) => (dispatch) => {
+  return ProductService.getProduct(id)
+    .then((product) => {
+      dispatch({
+        type: GET_PRODUCT,
+        payload: product,
       });
     })
     .catch((err) => {});
