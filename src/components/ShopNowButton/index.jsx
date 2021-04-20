@@ -6,14 +6,13 @@ const ShopNowButton = (props) => {
   return (
     <Link to={props.href} style={{ textDecoration: "none" }}>
       <Button
-        className="shop-now-button"
+        className={"shop-now-button " + (props.className ?? "")}
         style={{
           width: props.width ?? "140px",
           height: props.height ?? "40px",
           fontSize: props.fontSize ?? "14px",
           backgroundColor: props.backgroundColor ?? "#ffa15f",
         }}
-        href={props.href}
       >
         <span
           className="shop-now-button__text"

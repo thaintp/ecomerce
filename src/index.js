@@ -4,6 +4,7 @@ import "index.scss";
 import App from "App";
 import reportWebVitals from "reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "@pathofdev/react-tag-input/build/index.css";
 import { applyMiddleware, createStore } from "redux";
 import rootReducer from "reducers";
 import { Provider } from "react-redux";

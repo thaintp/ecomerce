@@ -1,8 +1,61 @@
+@import "styles/colors.scss";
+
+.post-product__form__input {
+  width: 100%;
+}
 .post-product__images {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0 -10px;
+  width: calc(100% + 20px);
 }
 .post-product__image {
-  margin: 0 10px;
+  padding: 0 10px;
+  width: 25%;
+}
+
+.post-product__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.post-product__completeBtn {
+  margin-left: 20px;
+}
+
+.post-product__form__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  text-align: right;
+  color: $dark-grey;
+}
+
+.react-tag-input__tag {
+  height: 32px !important;
+  padding-right: 6.375px !important;
+  background-color: $white-two !important;
+}
+.react-tag-input__tag__remove {
+  background: $my-grey !important;
+  border-radius: 50% !important;
+  width: 16px !important;
+  height: 16px !important;
+  color: $white !important;
+}
+
+.post-product__row {
+  margin-top: 20px;
+}
+
+.post-product {
+  padding-bottom: 50px;
 }
