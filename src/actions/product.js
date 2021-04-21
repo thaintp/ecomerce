@@ -22,6 +22,18 @@ export const getProduct = (id) => (dispatch) => {
     .catch((err) => {});
 };
 
+export const postProduct = (product) => (dispatch) => {
+  return ProductService.postProduct(product)
+    .then((data) => {
+      console.log(data);
+      dispatch({
+        type: GET_PRODUCT,
+        payload: data,
+      });
+    })
+    .catch((err) => {});
+};
+
 export const removeProduct = (id) => (dispatch) => {
   return ProductService.removeProduct(id)
     .then((products) => {

@@ -1,4 +1,9 @@
-import { GET_PRODUCT, INIT_PRODUCTS, REMOVE_PRODUCT } from "actions/types";
+import {
+  GET_PRODUCT,
+  INIT_PRODUCTS,
+  REMOVE_PRODUCT,
+  POST_PRODUCT,
+} from "actions/types";
 
 const initialState = [];
 
@@ -12,6 +17,9 @@ const productReducer = (state = initialState, action) => {
       return state.map((product) =>
         product._id === payload._id ? payload : product
       );
+    case POST_PRODUCT:
+      return state;
+    // return [...state, payload];
     case REMOVE_PRODUCT:
       return state.filter((product) => product._id !== payload);
     default:

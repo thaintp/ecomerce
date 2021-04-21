@@ -3,20 +3,41 @@ import { ImageUpload, ShopNowButton } from "components";
 import { Container, Row, Col } from "components/Bootstrap";
 import { useState } from "react";
 import ReactTagInput from "@pathofdev/react-tag-input";
+import { useDispatch } from "react-redux";
+import { postProduct } from "actions/product";
 
 const PostProduct = () => {
-  const [files, setFiles] = useState([
+  const dispatch = useDispatch();
+  const [photos, setPhotos] = useState([
     undefined,
     undefined,
     undefined,
     undefined,
   ]);
-  const [categories, setCategories] = useState([]);
-  const [size, setSize] = useState([]);
-  const [colors, setColors] = useState([]);
+  const [name, setName] = useState("nam1");
+  const [categories, setCategories] = useState(["c1", "c2 c3"]);
+  const [brand, setBrand] = useState("zara");
+  const [price, setPrice] = useState(45.5);
+  const [size, setSize] = useState(["S", "M"]);
+  const [colors, setColors] = useState(["blue"]);
+  const [quantity, setQuantity] = useState(120);
+  const [description, setDescription] = useState("mo ta");
 
   const submitForm = (e) => {
     e.preventDefault();
+    dispatch(
+      postProduct({
+        photos,
+        name,
+        categories,
+        brand,
+        price,
+        size,
+        colors,
+        quantity,
+        description,
+      })
+    );
   };
 
   return (
@@ -28,13 +49,15 @@ const PostProduct = () => {
           </Col>
           <Col xs={10}>
             <div className="post-product__form__input post-product__images">
-              {files.map((file, index) => (
+              {photos.map((photo, index) => (
                 <ImageUpload
                   className="post-product__image"
                   id={index}
                   key={index}
                   onUpload={(file) =>
-                    setFiles(files.map((f, i) => (i === index ? file : f)))
+                    setPhotos(
+                      photos.map((photo, i) => (i === index ? file : photo))
+                    )
                   }
                 />
               ))}
@@ -52,6 +75,8 @@ const PostProduct = () => {
               className="form-control"
               name="name"
               placeholder="Enter product name..."
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               required
             />
           </Col>
@@ -79,6 +104,8 @@ const PostProduct = () => {
               className="form-control"
               name="brand"
               placeholder="Enter brand name..."
+              value={brand}
+              onChange={(e) => setBrand(e.target.value)}
               required
             />
           </Col>
@@ -94,6 +121,8 @@ const PostProduct = () => {
               className="form-control"
               name="price"
               placeholder="Enter product price..."
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
               required
             />
           </Col>
@@ -133,6 +162,8 @@ const PostProduct = () => {
               className="form-control"
               name="quantity"
               placeholder="Enter product quantity..."
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
               required
             />
           </Col>
@@ -148,6 +179,8 @@ const PostProduct = () => {
               className="form-control"
               name="description"
               placeholder="Enter product description..."
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
               required
             />
           </Col>
@@ -171,6 +204,7 @@ const PostProduct = () => {
                 height="48px"
                 title="Complete"
                 className="post-product__completeBtn"
+                onClick={submitForm}
               />
             </div>
           </Col>

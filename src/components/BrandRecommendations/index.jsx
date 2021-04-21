@@ -18,7 +18,10 @@ const BrandRecommendations = ({ brand }) => {
       </div>
       <div className="brand-recommendations__images">
         {products.map((product) => (
-          <div className="brand-recommendations__image-container" key={product}>
+          <div
+            className="brand-recommendations__image-container"
+            key={product._id}
+          >
             <img
               src={product.photos[0]}
               alt="productImage"

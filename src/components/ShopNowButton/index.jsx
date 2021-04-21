@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 
 const ShopNowButton = (props) => {
   return (
-    <Link to={props.href} style={{ textDecoration: "none" }}>
+    <Link
+      to={props.href ?? "#"}
+      style={{ textDecoration: "none" }}
+      onClick={(e) => (props.onClick ? props.onClick(e) : {})}
+    >
       <Button
         className={"shop-now-button " + (props.className ?? "")}
         style={{
