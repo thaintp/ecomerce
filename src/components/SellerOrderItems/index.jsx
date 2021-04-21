@@ -19,7 +19,7 @@ const SellerOrderItems = () => {
           <tr>
             <th className="seller-order-items__title">ORDER ID</th>
             <th className="seller-order-items__title">ORDER DATE</th>
-            <th className="seller-order-items__title">ACCOUNT</th>
+            <th className="seller-order-items__title">DETAIL</th>
             <th className="seller-order-items__title">TOTAL ($)</th>
             <th className="seller-order-items__title">STATUS</th>
             <th className="seller-order-items__title"></th>

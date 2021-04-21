@@ -31,3 +31,14 @@
 .App-seller__sidebar {
   height: calc(100% - 100px);
 }
+
+.App-loading {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.219);
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

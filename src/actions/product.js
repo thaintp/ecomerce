@@ -1,5 +1,13 @@
-import { GET_PRODUCT, INIT_PRODUCTS, REMOVE_PRODUCT } from "actions/types";
+import {
+  GET_PRODUCT,
+  INIT_PRODUCTS,
+  POST_PRODUCT,
+  REMOVE_PRODUCT,
+  LOADING,
+  LOADED,
+} from "actions/types";
 import ProductService from "services/product.service";
+import Swal from "sweetalert2";
 
 export const initProducts = () => (dispatch) => {
   return ProductService.initProducts()
@@ -23,12 +31,21 @@ export const getProduct = (id) => (dispatch) => {
 };
 
 export const postProduct = (product) => (dispatch) => {
+  dispatch({
+    type: LOADING,
+  });
   return ProductService.postProduct(product)
     .then((data) => {
-      console.log(data);
       dispatch({
-        type: GET_PRODUCT,
+        type: POST_PRODUCT,
         payload: data,
+      });
+      dispatch({
+        type: LOADED,
+      });
+      Swal.fire({
+        icon: "success",
+        title: "Add product successfully",
       });
     })
     .catch((err) => {});

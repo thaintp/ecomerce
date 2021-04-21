@@ -5,6 +5,7 @@ import { useState } from "react";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import { useDispatch } from "react-redux";
 import { postProduct } from "actions/product";
+import Swal from "sweetalert2";
 
 const PostProduct = () => {
   const dispatch = useDispatch();
@@ -14,30 +15,37 @@ const PostProduct = () => {
     undefined,
     undefined,
   ]);
-  const [name, setName] = useState("nam1");
-  const [categories, setCategories] = useState(["c1", "c2 c3"]);
-  const [brand, setBrand] = useState("zara");
-  const [price, setPrice] = useState(45.5);
-  const [size, setSize] = useState(["S", "M"]);
-  const [colors, setColors] = useState(["blue"]);
-  const [quantity, setQuantity] = useState(120);
-  const [description, setDescription] = useState("mo ta");
+  const [name, setName] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [brand, setBrand] = useState("");
+  const [price, setPrice] = useState(0);
+  const [sizes, setSizes] = useState([]);
+  const [colors, setColors] = useState([]);
+  const [quantity, setQuantity] = useState(0);
+  const [description, setDescription] = useState("");
 
   const submitForm = (e) => {
     e.preventDefault();
-    dispatch(
-      postProduct({
-        photos,
-        name,
-        categories,
-        brand,
-        price,
-        size,
-        colors,
-        quantity,
-        description,
-      })
-    );
+    if (photos.filter((photo) => photo !== undefined).length == 0) {
+      Swal.fire({
+        icon: "error",
+        title: "Please add at least 1 photo!",
+      });
+    } else {
+      dispatch(
+        postProduct({
+          photos,
+          name,
+          categories,
+          brand,
+          price,
+          sizes,
+          colors,
+          quantity,
+          description,
+        })
+      );
+    }
   };
 
   return (
@@ -134,8 +142,8 @@ const PostProduct = () => {
           </Col>
           <Col xs={10} className="post-product__form__input">
             <ReactTagInput
-              tags={size}
-              onChange={(newSize) => setSize(newSize)}
+              tags={sizes}
+              onChange={(newSizes) => setSizes(newSizes)}
             />
           </Col>
           <Col xs={1}></Col>

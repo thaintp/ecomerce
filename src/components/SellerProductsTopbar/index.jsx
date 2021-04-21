@@ -12,6 +12,7 @@ const SellerProductsTopbar = () => {
             <img src="/images/plus-white.svg" alt="plus_icon" /> Add product
           </span>
         }
+        className="add-product-button__container"
       />
       <ShopNowButton
         href="products/export"

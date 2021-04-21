@@ -31,7 +31,7 @@ class ProductService {
     formData.append("categories", product.categories);
     formData.append("brand", product.brand);
     formData.append("price", product.price);
-    formData.append("size", product.size);
+    formData.append("sizes", product.sizes);
     formData.append("colors", product.colors);
     formData.append("quantity", product.quantity);
     formData.append("description", product.description);

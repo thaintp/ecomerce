@@ -18,8 +18,7 @@ const productReducer = (state = initialState, action) => {
         product._id === payload._id ? payload : product
       );
     case POST_PRODUCT:
-      return state;
-    // return [...state, payload];
+      return [...state, payload];
     case REMOVE_PRODUCT:
       return state.filter((product) => product._id !== payload);
     default:

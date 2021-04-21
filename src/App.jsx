@@ -32,6 +32,7 @@ function App() {
   const [sellerCategory, setSellerCategory] = useState("Overview");
 
   const { account: currentAccount } = useSelector((state) => state.auth);
+  const loading = useSelector((state) => state.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -51,6 +52,9 @@ function App() {
 
   return (
     <Router history={history}>
+      <div className={"App-loading" + (loading ? "" : " hidden")}>
+        <span className="spinner-border spinner-border-sm mr-2"></span>
+      </div>
       {showSellerBoard ? (
         <div className="App-seller">
           <Container fluid className="h-100 p-0">
