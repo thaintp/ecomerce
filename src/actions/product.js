@@ -2,6 +2,7 @@ import {
   GET_PRODUCT,
   INIT_PRODUCTS,
   POST_PRODUCT,
+  PUT_PRODUCT,
   REMOVE_PRODUCT,
   LOADING,
   LOADED,
@@ -46,6 +47,26 @@ export const postProduct = (product) => (dispatch) => {
       Swal.fire({
         icon: "success",
         title: "Add product successfully",
+      });
+    })
+    .catch((err) => {});
+};
+export const putProduct = (id, product) => (dispatch) => {
+  dispatch({
+    type: LOADING,
+  });
+  return ProductService.putProduct(id, product)
+    .then((data) => {
+      dispatch({
+        type: PUT_PRODUCT,
+        payload: data,
+      });
+      dispatch({
+        type: LOADED,
+      });
+      Swal.fire({
+        icon: "success",
+        title: "Edit product successfully",
       });
     })
     .catch((err) => {});

@@ -10,7 +10,7 @@ const SellerProductItems = () => {
   const products = useSelector((state) => state.products);
 
   useEffect(() => {
-    if (products.length === 0) dispatch(initProducts());
+    dispatch(initProducts());
   }, []);
   return (
     <div className="seller-order-items">

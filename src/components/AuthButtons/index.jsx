@@ -1,7 +1,6 @@
 import "./style.scss";
 import { RegisterModal, LoginModal, Account } from "components";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
 import { openSigninModal, openSignupModal } from "actions/modal";
 
 const AuthButtons = () => {

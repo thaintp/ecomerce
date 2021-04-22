@@ -1,7 +1,7 @@
 import { LOADING, LOADED } from "actions/types";
 
 const loadingReducer = (state = false, action) => {
-  const { type, payload } = action;
+  const { type } = action;
 
   switch (type) {
     case LOADING:

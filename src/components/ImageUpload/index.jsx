@@ -1,14 +1,22 @@
 import "./style.scss";
 import { useRef, useState } from "react";
 import classNames from "classnames";
+import { useEffect } from "react";
 
-const ImageUpload = ({ className, id, onUpload }) => {
+const ImageUpload = ({ className, id, onUpload, url }) => {
   const fileSelect = useRef();
   const fileDrag = useRef();
   const fileUploadForm = useRef();
   const [isGood, setIsGood] = useState(false);
   const [imgSrc, setImgSrc] = useState("#");
   const [dragOver, setDragOver] = useState(false);
+  useEffect(() => {
+    if (url.length) {
+      setImgSrc(url);
+      setIsGood(true);
+      onUpload(url);
+    }
+  }, [url]);
 
   const removeFile = (e) => {
     fileSelect.current.value = "";

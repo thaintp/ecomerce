@@ -11,6 +11,7 @@ import { login } from "actions/auth";
 import { clearMessage } from "actions/message";
 import { Error } from "components";
 import { closeSigninModal, openSignupModal } from "actions/modal";
+import { ShopNowButton } from "components";
 
 const LoginModal = () => {
   const [state, setState] = useState({
@@ -60,9 +61,11 @@ const LoginModal = () => {
         <div className="login-modal__text login-modal__title">Log In</div>
         {message && <Error message={message} />}
         <Modal.Body>
-          <Form onSubmit={(e) => handleLogin(e)} ref={form}>
+          <Form ref={form}>
             <div className="form-group">
-              <label htmlFor="email">E-MAIL</label>
+              <label htmlFor="email" className="login-modal__label">
+                E-MAIL
+              </label>
               <Input
                 type="email"
                 className="form-control"
@@ -75,7 +78,9 @@ const LoginModal = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">PASSWORD</label>
+              <label htmlFor="password" className="login-modal__label">
+                PASSWORD
+              </label>
               <Input
                 type="password"
                 className="form-control"
@@ -92,9 +97,15 @@ const LoginModal = () => {
                 <input
                   type="checkbox"
                   name="remember"
+                  id="remember"
                   className="login-modal__checkbox"
                 />
-                <span className="login-modal__text">Remember password</span>
+                <label
+                  className="login-modal__text login-modal__label_2"
+                  htmlFor="remember"
+                >
+                  Remember password
+                </label>
               </div>
               <div className="login-modal__forgotPassword login-modal__text">
                 Forgot your password?
@@ -102,15 +113,13 @@ const LoginModal = () => {
             </div>
 
             <div className="form-group">
-              <button
-                className="btn btn-primary btn-block"
-                disabled={state.loading}
-              >
-                {state.loading && (
-                  <span className="spinner-border spinner-border-sm mr-2"></span>
-                )}
-                <span>Login</span>
-              </button>
+              <ShopNowButton
+                href="/seller/products/add"
+                width="100%"
+                height="50px"
+                title="Login"
+                onClick={handleLogin}
+              />
             </div>
             <CheckButton style={{ display: "none" }} ref={checkBtn} />
           </Form>

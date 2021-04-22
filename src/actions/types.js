@@ -29,6 +29,9 @@ export const CLOSE_SIGNUP_MODAL = "CLOSE_SIGNUP_MODAL";
 export const CLOSE_ALL_MODAL = "CLOSE_ALL_MODAL";
 
 export const POST_PRODUCT = "POST_PRODUCT";
+export const PUT_PRODUCT = "PUT_PRODUCT";
 
 export const LOADING = "LOADING";
 export const LOADED = "LOADED";
+
+export const CLICK_PRODUCT = "CLICK_PRODUCT";

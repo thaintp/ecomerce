@@ -28,11 +28,11 @@ class ProductService {
       if (photo !== undefined) formData.append("photos", photo);
     }
     formData.append("name", product.name);
-    formData.append("categories", product.categories);
+    formData.append("categories", JSON.stringify(product.categories));
     formData.append("brand", product.brand);
     formData.append("price", product.price);
-    formData.append("sizes", product.sizes);
-    formData.append("colors", product.colors);
+    formData.append("sizes", JSON.stringify(product.sizes));
+    formData.append("colors", JSON.stringify(product.colors));
     formData.append("quantity", product.quantity);
     formData.append("description", product.description);
 
@@ -41,7 +41,28 @@ class ProductService {
       .then((res) => {
         return res.data;
       })
-      .catch((err) => console("File Upload Error"));
+      .catch((err) => console("Post product error"));
+  }
+  async putProduct(id, product) {
+    const formData = new FormData();
+    for (let photo of product.photos) {
+      if (photo !== undefined) formData.append("photos", photo);
+    }
+    formData.append("name", product.name);
+    formData.append("categories", JSON.stringify(product.categories));
+    formData.append("brand", product.brand);
+    formData.append("price", product.price);
+    formData.append("sizes", JSON.stringify(product.sizes));
+    formData.append("colors", JSON.stringify(product.colors));
+    formData.append("quantity", product.quantity);
+    formData.append("description", product.description);
+
+    return await axios
+      .put("/products/" + id, formData)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => console("Put product error"));
   }
 }
 

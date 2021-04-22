@@ -6,6 +6,7 @@ import orders from "./order";
 import products from "./product";
 import modal from "./modal";
 import loading from "./loading";
+import curProduct from "./curProduct";
 
 export default combineReducers({
   auth,
@@ -15,4 +16,5 @@ export default combineReducers({
   products,
   modal,
   loading,
+  curProduct,
 });

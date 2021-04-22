@@ -9,6 +9,11 @@
   letter-spacing: normal;
   color: $greyish-brown;
 }
+.login-modal__label {
+  font-size: 12px;
+  font-weight: bold;
+  color: $dark-grey;
+}
 .login-modal__title {
   font-size: 32px;
   font-weight: bold;
@@ -49,6 +54,7 @@
   border: solid $pumpkin-orange;
   border-width: 0 0 1px 0;
   margin: 0 4px;
+  cursor: pointer;
   &:hover {
     color: $orange-1;
   }
@@ -57,4 +63,13 @@
 .login-modal__forgotPassword {
   font-weight: 600;
   color: $greyish-brown;
+}
+
+.login-modal__label_2 {
+  margin: 0;
+}
+
+.modal-header {
+  border: none !important;
+  padding-bottom: 0 !important;
 }

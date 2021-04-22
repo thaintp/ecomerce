@@ -7,7 +7,7 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import { register } from "actions/auth";
 import { clearMessage } from "actions/message";
-import { Error } from "components";
+import { Error, ShopNowButton } from "components";
 import { closeSignupModal, openSigninModal } from "actions/modal";
 
 const RegisterModal = () => {
@@ -66,7 +66,9 @@ const RegisterModal = () => {
         <Modal.Body>
           <Form onSubmit={(e) => handleRegister(e)} ref={form}>
             <div className="form-group">
-              <label htmlFor="name">NAME</label>
+              <label htmlFor="name" className="login-modal__label">
+                NAME
+              </label>
               <Input
                 type="text"
                 className="form-control"
@@ -79,7 +81,9 @@ const RegisterModal = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">E-MAIL</label>
+              <label htmlFor="email" className="login-modal__label">
+                E-MAIL
+              </label>
               <Input
                 type="email"
                 className="form-control"
@@ -92,7 +96,9 @@ const RegisterModal = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">PASSWORD</label>
+              <label htmlFor="password" className="login-modal__label">
+                PASSWORD
+              </label>
               <Input
                 type="password"
                 className="form-control"
@@ -110,13 +116,17 @@ const RegisterModal = () => {
             </div>
 
             <div className="form-group">
-              <button className="btn btn-primary btn-block">
-                <span>Register</span>
-              </button>
+              <ShopNowButton
+                href="/seller/products/add"
+                width="100%"
+                height="50px"
+                title="Register"
+                onClick={handleRegister}
+              />
             </div>
           </Form>
         </Modal.Body>
-        <Modal.Footer className="register-modal__footer">
+        <Modal.Footer className="login-modal__footer login-modal__text">
           Do you have an account?{" "}
           <span
             className="register-modal__link"

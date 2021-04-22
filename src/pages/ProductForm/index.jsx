@@ -1,52 +1,48 @@
 import "./style.scss";
 import { ImageUpload, ShopNowButton } from "components";
 import { Container, Row, Col } from "components/Bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactTagInput from "@pathofdev/react-tag-input";
-import { useDispatch } from "react-redux";
-import { postProduct } from "actions/product";
 import Swal from "sweetalert2";
 
-const PostProduct = () => {
-  const dispatch = useDispatch();
-  const [photos, setPhotos] = useState([
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-  ]);
-  const [name, setName] = useState("");
-  const [categories, setCategories] = useState([]);
-  const [brand, setBrand] = useState("");
-  const [price, setPrice] = useState(0);
-  const [sizes, setSizes] = useState([]);
-  const [colors, setColors] = useState([]);
-  const [quantity, setQuantity] = useState(0);
-  const [description, setDescription] = useState("");
+const ProductForm = ({ product, callback }) => {
+  const [photos, setPhotos] = useState(
+    product.photos ?? [undefined, undefined, undefined, undefined]
+  );
+  const [name, setName] = useState(product.name ?? "");
+  const [categories, setCategories] = useState(product.categories ?? []);
+  const [brand, setBrand] = useState(product.brand ?? "");
+  const [price, setPrice] = useState(product.price ?? 0);
+  const [sizes, setSizes] = useState(product.sizes ?? []);
+  const [colors, setColors] = useState(product.colors ?? []);
+  const [quantity, setQuantity] = useState(product.quantity ?? 0);
+  const [description, setDescription] = useState(product.description ?? "");
 
   const submitForm = (e) => {
     e.preventDefault();
-    if (photos.filter((photo) => photo !== undefined).length == 0) {
+    if (photos.filter((photo) => photo !== undefined).length === 0) {
       Swal.fire({
         icon: "error",
         title: "Please add at least 1 photo!",
       });
     } else {
-      dispatch(
-        postProduct({
-          photos,
-          name,
-          categories,
-          brand,
-          price,
-          sizes,
-          colors,
-          quantity,
-          description,
-        })
-      );
+      const _product = {
+        photos,
+        name,
+        categories,
+        brand,
+        price,
+        sizes,
+        colors,
+        quantity,
+        description,
+      };
+      callback(_product, product._id);
     }
   };
+  useEffect(() => {
+    product.photos && setPhotos([0, 1, 2, 3].map((v) => product.photos[v]));
+  }, [product.photos]);
 
   return (
     <Container className="post-product">
@@ -67,6 +63,7 @@ const PostProduct = () => {
                       photos.map((photo, i) => (i === index ? file : photo))
                     )
                   }
+                  url={typeof photos[index] === "string" ? photos[index] : ""}
                 />
               ))}
             </div>
@@ -199,7 +196,7 @@ const PostProduct = () => {
           <Col xs={10} className="post-product__form__input">
             <div className="post-product__buttons">
               <ShopNowButton
-                href="products/export"
+                href="/seller/products"
                 width="180px"
                 height="48px"
                 color="#ffa15f"
@@ -207,7 +204,7 @@ const PostProduct = () => {
                 title="Cancel"
               />
               <ShopNowButton
-                href="products/add"
+                href="/seller/products/add"
                 width="180px"
                 height="48px"
                 title="Complete"
@@ -223,4 +220,4 @@ const PostProduct = () => {
   );
 };
 
-export default PostProduct;
+export default ProductForm;

@@ -1,8 +1,10 @@
 import "./style.scss";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useDispatch } from "react-redux";
+import { CLICK_PRODUCT } from "actions/types";
 import { SellerProductDetail } from "components";
 import { removeProduct } from "actions/product";
+import { Link } from "react-router-dom";
 
 const SellerProductItem = ({ product }) => {
   const dispatch = useDispatch();
@@ -23,9 +25,22 @@ const SellerProductItem = ({ product }) => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item onClick={() => {}}>
+            <Link
+              to="products/edit"
+              onClick={() => {
+                dispatch({
+                  type: CLICK_PRODUCT,
+                  payload: product,
+                });
+              }}
+              style={{
+                textDecoration: "none",
+                color: "#000000",
+              }}
+              className="dropdown-item"
+            >
               <img src="/images/edit.svg" alt="edit_icon" /> Edit
-            </Dropdown.Item>
+            </Link>
             <Dropdown.Item
               onClick={() => {
                 dispatch(removeProduct(product._id));

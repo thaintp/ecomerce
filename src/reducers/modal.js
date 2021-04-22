@@ -17,7 +17,7 @@ const initialState = {
 };
 
 const modalReducer = (state = initialState, action) => {
-  const { type, payload } = action;
+  const { type } = action;
 
   switch (type) {
     case CLOSE_ALL_MODAL:

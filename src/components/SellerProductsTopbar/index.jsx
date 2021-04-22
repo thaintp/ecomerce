@@ -15,7 +15,7 @@ const SellerProductsTopbar = () => {
         className="add-product-button__container"
       />
       <ShopNowButton
-        href="products/export"
+        href="products"
         width="112px"
         height="48px"
         color="#ffa15f"

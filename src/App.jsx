@@ -14,7 +14,7 @@ import {
   Cart,
   SellerOrders,
   SellerProducts,
-  PostProduct,
+  ProductForm,
 } from "pages";
 import "style.scss";
 import Container from "react-bootstrap/Container";
@@ -26,6 +26,7 @@ import { getCartDetail } from "actions/cart";
 import { history } from "./helpers/history";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { postProduct, putProduct } from "actions/product";
 
 function App() {
   const [showSellerBoard, setShowSellerBoard] = useState(false);
@@ -33,6 +34,7 @@ function App() {
 
   const { account: currentAccount } = useSelector((state) => state.auth);
   const loading = useSelector((state) => state.loading);
+  const curProduct = useSelector((state) => state.curProduct);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -82,7 +84,18 @@ function App() {
                     <SellerOrders />
                   </Route>
                   <Route exact path="/seller/products/add">
-                    <PostProduct />
+                    <ProductForm
+                      product={{}}
+                      callback={(product, id) => dispatch(postProduct(product))}
+                    />
+                  </Route>
+                  <Route exact path="/seller/products/edit">
+                    <ProductForm
+                      product={curProduct}
+                      callback={(product, id) =>
+                        dispatch(putProduct(id, product))
+                      }
+                    />
                   </Route>
                   <Route exact path="/seller/products">
                     <SellerProducts />

@@ -5,4 +5,4 @@ export { default as Seller } from "./Seller";
 export { default as Cart } from "./Cart";
 export { default as SellerOrders } from "./SellerOrders";
 export { default as SellerProducts } from "./SellerProducts";
-export { default as PostProduct } from "./PostProduct";
+export { default as ProductForm } from "./ProductForm";
