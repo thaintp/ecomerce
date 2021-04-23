@@ -21,9 +21,12 @@ const fetchProductsByBrand = async (brand) => {
 const fetchProduct = async (id) => {
   const data = await axios({
     method: "GET",
-    url: `/products/${id}`,
+    url: `/products`,
+    params: {
+      id,
+    },
   });
-  return data.data;
+  return data.data[0];
 };
 
 export { fetchProducts, fetchProduct, fetchProductsByBrand };

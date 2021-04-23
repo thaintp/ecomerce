@@ -122,7 +122,7 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/products/search/:name">
+            <Route exact path="/products/search/:name/:page">
               <Products />
             </Route>
             <Route path="/products/:category/all/:page">

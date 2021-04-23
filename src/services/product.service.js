@@ -4,23 +4,28 @@ class ProductService {
   async initProducts() {
     const data = await axios({
       method: "GET",
-      url: "/products/all",
+      url: "/products",
     });
     return data.data;
   }
   async paginate(page, quantity) {
     const data = await axios({
       method: "GET",
-      url: `/products/paginate/${page}/${quantity}`,
+      url: `/products`,
+      params: {
+        page,
+        limit: quantity,
+      },
     });
     return data.data;
   }
-  async getMaxPage(quantity) {
+  async getMaxPage(quantity, filter = {}) {
     const data = await axios({
       method: "GET",
-      url: `/products/maxPaginate/${quantity}`,
+      url: `/products/count`,
+      params: filter,
     });
-    return data.data;
+    return parseInt(data.data) / quantity + 1;
   }
   async removeProduct(id) {
     await axios({
@@ -32,16 +37,26 @@ class ProductService {
   async getProduct(id) {
     const data = await axios({
       method: "GET",
-      url: `/products/${id}`,
+      url: `/products`,
+      params: {
+        id,
+      },
     });
     return data.data;
   }
-  async search(name) {
+  async search(name, page, limit) {
     const data = await axios({
       method: "GET",
-      url: `/products?name=${name}`,
+      url: `/products`,
+      params: {
+        name,
+        page,
+        limit,
+      },
     });
-    return data.data;
+    const products = data.data;
+    const count = await this.getMaxPage(limit, { name });
+    return { products, count };
   }
   async postProduct(product) {
     const formData = new FormData();

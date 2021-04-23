@@ -20,11 +20,9 @@ const Products = () => {
   const [maxPage, setMaxPage] = useState([]);
   useEffect(() => {
     if (name) {
-      ProductService.search(name).then((data) => {
-        setProducts(data);
-      });
-      ProductService.getMaxPage(100).then((data) => {
-        setMaxPage(data);
+      ProductService.search(name, page, 10).then((data) => {
+        setProducts(data.products);
+        setMaxPage(data.count);
       });
     } else {
       ProductService.paginate(page, 10).then((data) => {
@@ -61,6 +59,9 @@ const Products = () => {
               <Row>
                 <ProductsList products={products} />
               </Row>
+              <div className="products-page__content">
+                <Pagination current={parseInt(page)} max={parseInt(maxPage)} />
+              </div>
             </Container>
           </Col>
         </Row>

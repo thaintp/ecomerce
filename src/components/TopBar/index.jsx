@@ -8,7 +8,8 @@ const TopBar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    window.location.pathname = "/products/search/" + inputName.current.value;
+    window.location.pathname =
+      "/products/search/" + inputName.current.value + "/1";
   };
   return (
     <div className="top-bar">
