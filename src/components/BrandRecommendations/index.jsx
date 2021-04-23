@@ -12,11 +12,13 @@ const BrandRecommendations = ({ brand }) => {
 
   return (
     <div className="brand-recommendations">
-      <div className="brand-recommendations__text brand-recommendations__title">
-        More from
-      </div>
-      <div className="brand-recommendations__text brand-recommendations__shop">
-        {brand}
+      <div className="brand-recommendations__top">
+        <div className="brand-recommendations__text brand-recommendations__title">
+          More from
+        </div>
+        <div className="brand-recommendations__text brand-recommendations__shop">
+          {brand}
+        </div>
       </div>
       <div className="brand-recommendations__images">
         {products.map((product) => (

@@ -10,8 +10,8 @@ const NavBar = () => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item href="/home">Home</Dropdown.Item>
-          <Dropdown.Item href="/products">Products</Dropdown.Item>
+          <Dropdown.Item href="/products/men/all/1">Home</Dropdown.Item>
+          <Dropdown.Item href="/products/men/all/1">Products</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
       <Dropdown>
@@ -20,8 +20,8 @@ const NavBar = () => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item href="/home">Home</Dropdown.Item>
-          <Dropdown.Item href="/products">Products</Dropdown.Item>
+          <Dropdown.Item href="/products/ladies/all/1">Home</Dropdown.Item>
+          <Dropdown.Item href="/products/ladies/all/1">Products</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
       <Dropdown>
@@ -30,8 +30,8 @@ const NavBar = () => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item href="/home">Home</Dropdown.Item>
-          <Dropdown.Item href="/products">Products</Dropdown.Item>
+          <Dropdown.Item href="/products/girls/all/1">Home</Dropdown.Item>
+          <Dropdown.Item href="/products/girls/all/1">Products</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
       <Dropdown>
@@ -40,8 +40,8 @@ const NavBar = () => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item href="/home">Home</Dropdown.Item>
-          <Dropdown.Item href="/products">Products</Dropdown.Item>
+          <Dropdown.Item href="/products/boys/all/1">Home</Dropdown.Item>
+          <Dropdown.Item href="/products/boys/all/1">Products</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>

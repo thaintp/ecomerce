@@ -35,3 +35,7 @@ export const LOADING = "LOADING";
 export const LOADED = "LOADED";
 
 export const CLICK_PRODUCT = "CLICK_PRODUCT";
+
+export const CHANGE_ITEM = "CHANGE_ITEM";
+
+export const PAGINATE = "PAGINATE";

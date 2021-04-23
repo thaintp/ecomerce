@@ -121,7 +121,7 @@ const RegisterModal = () => {
                 width="100%"
                 height="50px"
                 title="Register"
-                onClick={handleRegister}
+                onClick={(e) => handleRegister(e)}
               />
             </div>
           </Form>

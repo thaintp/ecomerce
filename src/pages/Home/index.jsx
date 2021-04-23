@@ -23,7 +23,7 @@ const Home = () => {
         <CategoryPoster
           imageSrc="/images/men.jpg"
           title="Men"
-          href="/products/men"
+          href="/products/men/all/1"
         />
         <CategoryPoster
           imageSrc="/images/lady.jpg"

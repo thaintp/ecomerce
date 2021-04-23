@@ -3,7 +3,7 @@ import axios from "utils/axios";
 const fetchProducts = async () => {
   const data = await axios({
     method: "GET",
-    url: "/products",
+    url: "/products/all",
   });
   return data.data;
 };
@@ -13,7 +13,9 @@ const fetchProductsByBrand = async (brand) => {
     method: "GET",
     url: `/products/brand/${brand}`,
   });
-  return data.data;
+  let res = data.data;
+  res = res.length > 4 ? res.slice(0, 4) : res;
+  return res;
 };
 
 const fetchProduct = async (id) => {

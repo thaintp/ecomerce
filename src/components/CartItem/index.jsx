@@ -6,7 +6,7 @@ import { formatPrice } from "utils/number";
 import { Link } from "react-router-dom";
 import { QuantityChooser } from "components";
 import { useDispatch } from "react-redux";
-import { removeItem } from "actions/cart";
+import { removeItem, changeItem } from "actions/cart";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -22,7 +22,13 @@ const CartItem = ({ item }) => {
               <img src={item.product.photos[0]} alt="" />
             </div>
             <div className="cart-item__product__actions">
-              <div className="product__actions__name">{item.product.name}</div>
+              <Link
+                className="product-item__name"
+                to={`/products/product/${item.product._id}`}
+                style={{ margin: "0" }}
+              >
+                {item.product.name}
+              </Link>
               <div className="product__actions__links">
                 <Link className="product__actions__link" to="#">
                   Change
@@ -52,7 +58,7 @@ const CartItem = ({ item }) => {
               className="product-options__quantity-chooser__item"
               quantity={item.product.quantity}
               item={item}
-              setItem={() => {}}
+              setItem={(newItem) => dispatch(changeItem(newItem))}
             />
           </Col>
           <Col className="cart-item__col cart-item__col--left p-0" xs={2}>

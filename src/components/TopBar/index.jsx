@@ -1,16 +1,27 @@
 import "./style.scss";
 import { AuthButtons, CartWrapper } from "components";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const TopBar = () => {
+  const inputName = useRef();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    window.location.pathname = "/products/search/" + inputName.current.value;
+  };
   return (
     <div className="top-bar">
-      <form className="top-bar__item top-bar__search">
+      <form
+        className="top-bar__item top-bar__search"
+        onSubmit={(e) => handleSearch(e)}
+      >
         <input
-          type="search"
+          type="text"
           placeholder="Search.."
-          name="search"
+          name="name"
           className="top-bar__inputSearch"
+          ref={inputName}
         />
         <img
           src="/images/search.svg"

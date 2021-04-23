@@ -4,6 +4,7 @@ import {
   GET_CART_DETAIL,
   ADD_ITEM_ERROR,
   ORDER,
+  CHANGE_ITEM,
 } from "actions/types";
 
 const initialState = {};
@@ -17,8 +18,8 @@ const cartReducer = (state = initialState, action) => {
     case ORDER:
       return {};
     case ADD_ITEM:
-      return payload;
     case REMOVE_ITEM:
+    case CHANGE_ITEM:
       return payload;
     case ADD_ITEM_ERROR:
       return state;

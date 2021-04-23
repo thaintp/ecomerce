@@ -20,6 +20,17 @@ export const initProducts = () => (dispatch) => {
     })
     .catch((err) => {});
 };
+
+export const paginate = (page, quantity) => (dispatch) => {
+  return ProductService.paginate(page, quantity)
+    .then((products) => {
+      dispatch({
+        type: INIT_PRODUCTS,
+        payload: products,
+      });
+    })
+    .catch((err) => {});
+};
 export const getProduct = (id) => (dispatch) => {
   return ProductService.getProduct(id)
     .then((product) => {

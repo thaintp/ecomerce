@@ -10,8 +10,31 @@ import {
   Pagination,
   ProductsList,
 } from "components";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import ProductService from "services/product.service";
 
 const Products = () => {
+  const { page, name } = useParams();
+  const [products, setProducts] = useState([]);
+  const [maxPage, setMaxPage] = useState([]);
+  useEffect(() => {
+    if (name) {
+      ProductService.search(name).then((data) => {
+        setProducts(data);
+      });
+      ProductService.getMaxPage(100).then((data) => {
+        setMaxPage(data);
+      });
+    } else {
+      ProductService.paginate(page, 10).then((data) => {
+        setProducts(data);
+      });
+      ProductService.getMaxPage(10).then((data) => {
+        setMaxPage(data);
+      });
+    }
+  }, [page]);
   return (
     <div className="products-page">
       <ProductsBreadcrumb />
@@ -29,11 +52,14 @@ const Products = () => {
                   <SortBy />
                 </div>
                 <div className="products-page__pagination">
-                  <Pagination current={1} sum={100} />
+                  <Pagination
+                    current={parseInt(page)}
+                    max={parseInt(maxPage)}
+                  />
                 </div>
               </Row>
               <Row>
-                <ProductsList />
+                <ProductsList products={products} />
               </Row>
             </Container>
           </Col>

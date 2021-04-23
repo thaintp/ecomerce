@@ -42,7 +42,7 @@
 .product__actions__links {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .product__actions__link {

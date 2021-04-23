@@ -118,7 +118,7 @@ const LoginModal = () => {
                 width="100%"
                 height="50px"
                 title="Login"
-                onClick={handleLogin}
+                onClick={(e) => handleLogin(e)}
               />
             </div>
             <CheckButton style={{ display: "none" }} ref={checkBtn} />

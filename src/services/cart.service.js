@@ -48,6 +48,20 @@ class CartService {
         throw err;
       });
   }
+
+  async changeItem(item) {
+    return await axios({
+      method: "PUT",
+      url: "/order/changeItem/" + item._id,
+      data: { item },
+    })
+      .then((response) => {
+        return response.data;
+      })
+      .catch((err) => {
+        throw err;
+      });
+  }
 }
 
 export default new CartService();

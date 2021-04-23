@@ -4,7 +4,21 @@ class ProductService {
   async initProducts() {
     const data = await axios({
       method: "GET",
-      url: "/products",
+      url: "/products/all",
+    });
+    return data.data;
+  }
+  async paginate(page, quantity) {
+    const data = await axios({
+      method: "GET",
+      url: `/products/paginate/${page}/${quantity}`,
+    });
+    return data.data;
+  }
+  async getMaxPage(quantity) {
+    const data = await axios({
+      method: "GET",
+      url: `/products/maxPaginate/${quantity}`,
     });
     return data.data;
   }
@@ -19,6 +33,13 @@ class ProductService {
     const data = await axios({
       method: "GET",
       url: `/products/${id}`,
+    });
+    return data.data;
+  }
+  async search(name) {
+    const data = await axios({
+      method: "GET",
+      url: `/products?name=${name}`,
     });
     return data.data;
   }
