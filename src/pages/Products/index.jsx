@@ -32,7 +32,7 @@ const Products = () => {
         setMaxPage(data);
       });
     }
-  }, [page]);
+  }, [page, name]);
   return (
     <div className="products-page">
       <ProductsBreadcrumb />

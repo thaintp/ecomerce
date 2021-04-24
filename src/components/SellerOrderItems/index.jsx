@@ -11,7 +11,7 @@ const SellerOrderItems = () => {
 
   useEffect(() => {
     dispatch(initOrders());
-  }, []);
+  }, [dispatch]);
   return (
     <div className="seller-order-items">
       <Table striped borderless hover>

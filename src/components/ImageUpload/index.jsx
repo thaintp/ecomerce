@@ -10,12 +10,14 @@ const ImageUpload = ({ className, id, onUpload, url }) => {
   const [isGood, setIsGood] = useState(false);
   const [imgSrc, setImgSrc] = useState("#");
   const [dragOver, setDragOver] = useState(false);
+
   useEffect(() => {
     if (url.length) {
       setImgSrc(url);
       setIsGood(true);
       onUpload(url);
     }
+    // eslint-disable-next-line
   }, [url]);
 
   const removeFile = (e) => {
