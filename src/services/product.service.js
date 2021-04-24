@@ -25,7 +25,7 @@ class ProductService {
       url: `/products/count`,
       params: filter,
     });
-    return parseInt(data.data) / quantity + 1;
+    return (parseInt(data.data) - 1) / quantity + 1;
   }
   async removeProduct(id) {
     await axios({
