@@ -16,6 +16,7 @@ const Home = () => {
             width="180px"
             height="50px"
             fontSize="16px"
+            href="/products/men/all/1"
           ></ShopNowButton>
         </div>
       </div>
@@ -28,17 +29,17 @@ const Home = () => {
         <CategoryPoster
           imageSrc="/images/lady.jpg"
           title="Ladies"
-          href="/products"
+          href="/products/ladies/all/1"
         />
         <CategoryPoster
           imageSrc="/images/girl.jpg"
           title="Girls"
-          href="/products"
+          href="/products/girls/all/1"
         />
         <CategoryPoster
           imageSrc="/images/boy.jpg"
           title="Boys"
-          href="/products"
+          href="/products/boys/all/1"
         />
       </div>
     </div>

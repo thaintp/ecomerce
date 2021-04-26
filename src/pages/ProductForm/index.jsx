@@ -1,5 +1,5 @@
 import "./style.scss";
-import { ImageUpload, ShopNowButton } from "components";
+import { ImageUpload, ShopNowButton, InputTag } from "components";
 import { Container, Row, Col } from "components/Bootstrap";
 import { useState, useEffect } from "react";
 import ReactTagInput from "@pathofdev/react-tag-input";
@@ -92,10 +92,11 @@ const ProductForm = ({ product, callback }) => {
             CATEGORIES
           </Col>
           <Col xs={10} className="post-product__form__input">
-            <ReactTagInput
+            {/* <ReactTagInput
               tags={categories}
               onChange={(newCategories) => setCategories(newCategories)}
-            />
+            /> */}
+            <InputTag></InputTag>
           </Col>
           <Col xs={1}></Col>
         </Row>

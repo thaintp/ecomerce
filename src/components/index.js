@@ -45,3 +45,4 @@ export { default as SellerProductDetail } from "./SellerProductDetail";
 export { default as Status } from "./Status";
 export { default as SellerProductsTopbar } from "./SellerProductsTopbar";
 export { default as ImageUpload } from "./ImageUpload";
+export { default as InputTag } from "./InputTag";

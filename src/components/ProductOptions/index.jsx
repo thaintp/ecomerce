@@ -58,13 +58,15 @@ const ProductOptions = ({ product }) => {
               "product-options__addToCart__button--disabled":
                 item.color.length === 0 ||
                 item.size.length === 0 ||
-                currentAccount === null,
+                currentAccount === null ||
+                product.quantity === product.sold,
             })}
             onClick={() => addToCart()}
             disabled={
               item.color.length === 0 ||
               item.size.length === 0 ||
-              currentAccount === null
+              currentAccount === null ||
+              product.quantity === product.sold
             }
           >
             <span className="product-options__addToCart__text">
