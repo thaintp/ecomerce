@@ -26,7 +26,7 @@ const fetchProduct = async (id) => {
       id,
     },
   });
-  return data.data[0];
+  return data.data.products[0];
 };
 
 export { fetchProducts, fetchProduct, fetchProductsByBrand };
