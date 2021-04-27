@@ -6,7 +6,7 @@ class ProductService {
       method: "GET",
       url: "/products",
     });
-    return data.data;
+    return data.data.products;
   }
 
   async paginate(page, limit, name, category) {

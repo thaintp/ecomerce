@@ -36,6 +36,7 @@ const InputTag = ({ onChange }) => {
 
   useEffect(() => {
     onChange(tags);
+    // eslint-disable-next-line
   }, [tags]);
 
   return (
