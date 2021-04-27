@@ -1,50 +1,50 @@
 import "./style.scss";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import CategoryService from "services/category.service";
 
-const InputTag = () => {
+const InputTag = ({ onChange }) => {
   const [tags, setTags] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const [showInput, setShowInput] = useState(false);
-  const [categories, setCategories] = useState([
-    "Casual dresses",
-    "Going out dresses",
-    "Maxi / Midi dresses",
-  ]);
-
+  const [categories, setCategories] = useState([]);
   const tagInput = useRef();
 
   const removeTag = (i) => {
     const newTags = [...tags];
     const tag = newTags.splice(i, 1);
     setTags(newTags);
-    setCategories([...categories, tag]);
+    setCategories([...categories, ...tag]);
   };
 
   const addCategory = (e) => {
-    setCategories([...categories, tagInput.current.value]);
-    tagInput.current.value = null;
+    const category = tagInput.current.value;
+    CategoryService.postCategory(category)
+      .then((data) => {
+        setCategories([...categories, data]);
+        tagInput.current.value = null;
+      })
+      .catch((err) => console.log(err));
   };
 
-  const inputKeyDown = (e) => {
-    const val = e.target.value;
-    if (e.key === "Enter" && val) {
-      if (tags.find((tag) => tag.toLowerCase() === val.toLowerCase())) {
-        return;
-      }
-      setTags([...tags, val]);
-      tagInput.current.value = null;
-    } else if (e.key === "Backspace" && !val) {
-      removeTag(tags.length - 1);
-    }
-  };
+  useEffect(() => {
+    CategoryService.getAllCategories()
+      .then((data) => {
+        setCategories(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    onChange(tags);
+  }, [tags]);
 
   return (
     <div className="input-tag">
       <div className="input-tags">
         <ul className="input-tags__tags">
           {tags.map((tag, i) => (
-            <li key={tag}>
-              {tag}
+            <li key={tag._id}>
+              {tag.name}
               <button
                 type="button"
                 onClick={() => {
@@ -78,14 +78,16 @@ const InputTag = () => {
         <ul>
           {categories.map((category) => (
             <li
-              key={category}
+              key={category._id}
               onClick={() =>
                 !tags.includes(category) &&
                 (setTags([...tags, category]) ||
-                  setCategories(categories.filter((x) => x != category)))
+                  setCategories(
+                    categories.filter((x) => x._id !== category._id)
+                  ))
               }
             >
-              {category}
+              {category.name}
             </li>
           ))}
         </ul>

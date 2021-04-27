@@ -4,6 +4,9 @@
   font-size: 14px;
   color: $greyish-brown;
   padding-bottom: 10px;
+  &:hover {
+    color: $orange-2;
+  }
 }
 .category__tag--active {
   color: $orange-2;

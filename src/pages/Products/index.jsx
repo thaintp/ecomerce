@@ -16,30 +16,22 @@ import ProductService from "services/product.service";
 
 const Products = () => {
   const { page, name } = useParams();
+  const [category, setCategory] = useState(undefined);
   const [products, setProducts] = useState([]);
   const [maxPage, setMaxPage] = useState([]);
   useEffect(() => {
-    if (name) {
-      ProductService.search(name, page, 10).then((data) => {
-        setProducts(data.products);
-        setMaxPage(data.count);
-      });
-    } else {
-      ProductService.paginate(page, 10).then((data) => {
-        setProducts(data);
-      });
-      ProductService.getMaxPage(10).then((data) => {
-        setMaxPage(data);
-      });
-    }
-  }, [page, name]);
+    ProductService.paginate(page, 10, name, category).then((data) => {
+      setProducts(data.products);
+      setMaxPage(data.count);
+    });
+  }, [page, name, category]);
   return (
     <div className="products-page">
       <ProductsBreadcrumb />
       <Container fluid>
         <Row>
           <Col className="products-page__sidebar" xs={2}>
-            <Category />
+            <Category onChange={(item) => setCategory(item._id)} />
             <hr />
             <Filter />
           </Col>

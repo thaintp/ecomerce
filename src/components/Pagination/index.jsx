@@ -1,11 +1,12 @@
 import "./style.scss";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 const Pagination = (props) => {
   return (
     <div className="pagination">
+      {props.current > props.max && <Redirect to="1"></Redirect>}
       <Link to={`${props.current > 1 ? props.current - 1 : props.current}`}>
         <Button variant="light">
           <FaAngleLeft />

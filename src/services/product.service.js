@@ -8,16 +8,21 @@ class ProductService {
     });
     return data.data;
   }
-  async paginate(page, quantity) {
+
+  async paginate(page, limit, name, category) {
     const data = await axios({
       method: "GET",
       url: `/products`,
       params: {
         page,
-        limit: quantity,
+        limit,
+        name,
+        category,
       },
     });
-    return data.data;
+    const products = data.data;
+    const count = await this.getMaxPage(limit, { name, category });
+    return { products, count };
   }
   async getMaxPage(quantity, filter = {}) {
     const data = await axios({
@@ -44,20 +49,7 @@ class ProductService {
     });
     return data.data;
   }
-  async search(name, page, limit) {
-    const data = await axios({
-      method: "GET",
-      url: `/products`,
-      params: {
-        name,
-        page,
-        limit,
-      },
-    });
-    const products = data.data;
-    const count = await this.getMaxPage(limit, { name });
-    return { products, count };
-  }
+
   async postProduct(product) {
     const formData = new FormData();
     for (let photo of product.photos) {

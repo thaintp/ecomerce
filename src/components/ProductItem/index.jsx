@@ -21,7 +21,10 @@ const ProductItem = ({ product }) => {
           <div className="sold-out">Sold out</div>
         )}
       </div>
-      <Link className="product-item__text product-item__name">
+      <Link
+        className="product-item__text product-item__name"
+        to={`/products/${category}/${product._id}`}
+      >
         {product.name}
       </Link>
       <div className="product-item__text product-item__price">
