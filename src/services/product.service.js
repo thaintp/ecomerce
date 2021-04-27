@@ -20,9 +20,11 @@ class ProductService {
         category,
       },
     });
-    const products = data.data;
-    const count = await this.getMaxPage(limit, { name, category });
-    return { products, count };
+    const { products, count } = data.data;
+    return {
+      products,
+      count: (count - 1) / limit + 1,
+    };
   }
   async getMaxPage(quantity, filter = {}) {
     const data = await axios({
