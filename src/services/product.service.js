@@ -4,9 +4,9 @@ class ProductService {
   async initProducts() {
     const data = await axios({
       method: "GET",
-      url: "/products",
+      url: "/products/withCategories",
     });
-    return data.data.products;
+    return data.data;
   }
 
   async paginate(page, limit, name, category) {

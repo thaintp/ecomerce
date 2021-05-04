@@ -17,6 +17,9 @@
   color: $greyish-brown;
   background: none;
   border: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .auth-buttons__loginBtn {
@@ -29,6 +32,12 @@
   align-items: center;
   justify-content: center;
   background-color: $white;
+  &:hover {
+    background-color: $orange-1;
+    .auth-buttons__loginBtn__text {
+      color: $white;
+    }
+  }
 }
 .auth-buttons__loginBtn__text {
   width: 46px;

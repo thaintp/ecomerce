@@ -2,7 +2,7 @@ import "./style.scss";
 import { useState, useRef, useEffect } from "react";
 import CategoryService from "services/category.service";
 
-const InputTag = ({ onChange }) => {
+const InputTag = ({ _categories, onChange }) => {
   const [tags, setTags] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const [showInput, setShowInput] = useState(false);
@@ -29,9 +29,14 @@ const InputTag = ({ onChange }) => {
   useEffect(() => {
     CategoryService.getAllCategories()
       .then((data) => {
-        setCategories(data);
+        if (data !== undefined) {
+          const ids = _categories.map((category) => category._id);
+          setTags(data.filter((item) => ids.includes(item._id)));
+          setCategories(data.filter((item) => !ids.includes(item._id)));
+        }
       })
       .catch((err) => console.log(err));
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {

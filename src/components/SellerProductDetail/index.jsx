@@ -10,7 +10,7 @@ const SellerProductDetail = ({ product }) => {
           {product.name}
         </div>
         <div className="seller-product-detail__text seller-product-detail__category">
-          {product.categories?.join(", ")}
+          {product.categories?.map((category) => category.name).join(", ")}
         </div>
       </div>
     </div>

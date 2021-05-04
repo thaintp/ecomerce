@@ -93,6 +93,7 @@ const ProductForm = ({ product, callback }) => {
           </Col>
           <Col xs={10} className="post-product__form__input">
             <InputTag
+              _categories={categories}
               onChange={(tags) => setCategories(tags.map((tag) => tag._id))}
             ></InputTag>
           </Col>
