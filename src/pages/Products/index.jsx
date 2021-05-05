@@ -19,12 +19,20 @@ const Products = () => {
   const [category, setCategory] = useState(undefined);
   const [products, setProducts] = useState([]);
   const [maxPage, setMaxPage] = useState([]);
+  const [sort, setSort] = useState({});
+
   useEffect(() => {
-    ProductService.paginate(page, 10, name, category).then((data) => {
+    ProductService.paginate(
+      page,
+      10,
+      name,
+      category,
+      JSON.stringify(sort)
+    ).then((data) => {
       setProducts(data.products);
       setMaxPage(data.count);
     });
-  }, [page, name, category]);
+  }, [page, name, category, sort]);
   return (
     <div className="products-page">
       <ProductsBreadcrumb />
@@ -39,7 +47,7 @@ const Products = () => {
             <Container fluid>
               <Row className="products-page__content__title">
                 <div className="products-page__sortBy">
-                  <SortBy />
+                  <SortBy onChange={(newSort) => setSort(newSort)} />
                 </div>
                 <div className="products-page__pagination">
                   <Pagination

@@ -9,7 +9,7 @@ class ProductService {
     return data.data;
   }
 
-  async paginate(page, limit, name, category) {
+  async paginate(page, limit, name, category, sort) {
     const data = await axios({
       method: "GET",
       url: `/products`,
@@ -18,6 +18,7 @@ class ProductService {
         limit,
         name,
         category,
+        sort,
       },
     });
     const { products, count } = data.data;

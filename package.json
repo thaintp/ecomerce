@@ -10,7 +10,6 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "lodash": "^4.17.21",
-    "node-sass": "^5.0.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
@@ -22,6 +21,7 @@
     "react-validation": "^3.0.7",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "sass": "^1.32.12",
     "sweetalert2": "^10.16.5",
     "validator": "^13.5.2",
     "web-vitals": "^1.0.1"
