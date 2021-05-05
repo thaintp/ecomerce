@@ -32,6 +32,7 @@
   align-items: center;
   justify-content: center;
   background-color: $white;
+  transition: 0.5s;
   &:hover {
     background-color: $orange-1;
     .auth-buttons__loginBtn__text {
